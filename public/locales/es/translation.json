@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "Ready — Talento Tech Remoto para tu Empresa",
+    "description": "Conecta con los mejores desarrolladores, diseñadores y especialistas tech de Latinoamérica. Equipos listos para trabajar de forma remota."
+  },
+  "nav": {
+    "howItWorks": "¿Cómo funciona?",
+    "profiles": "Perfiles",
+    "benefits": "Beneficios",
+    "about": "Nosotros",
+    "cta": "Contratar ahora"
+  },
+  "hero": {
+    "badge": "Talento Tech Remoto",
+    "title": "Tu próximo gran equipo tech ya está",
+    "titleHighlight": "listo para trabajar",
+    "subtitle": "Conectamos empresas con los mejores desarrolladores, diseñadores y especialistas tech de Latinoamérica. Onboarding en días, no meses.",
+    "cta": "Contratar ahora",
+    "ctaSecondary": "Ver perfiles",
+    "statsHired": "Profesionales contratados",
+    "statsCompanies": "Empresas satisfechas",
+    "statsTime": "Días promedio de onboarding"
+  },
+  "howItWorks": {
+    "badge": "Proceso",
+    "title": "Simple, rápido y sin sorpresas",
+    "subtitle": "Tres pasos para tener tu equipo tech trabajando.",
+    "step1Title": "Cuéntanos qué necesitas",
+    "step1Desc": "Completa nuestro formulario en 2 minutos. Cuéntanos el perfil que buscas y la dedicación que necesitas.",
+    "step2Title": "Te presentamos candidatos",
+    "step2Desc": "En 48 horas te enviamos 3 perfiles preseleccionados, con CV, portafolio y evaluación técnica.",
+    "step3Title": "Empieza a trabajar",
+    "step3Desc": "Elige tu candidato favorito. Nosotros gestionamos el contrato, onboarding y soporte continuo."
+  },
+  "profiles": {
+    "badge": "Especialidades",
+    "title": "¿Qué perfil necesitas?",
+    "subtitle": "Contamos con especialistas en todas las áreas de tecnología.",
+    "frontend": {
+      "title": "Frontend Developer",
+      "desc": "Interfaces web modernas, responsivas y de alto rendimiento."
+    },
+    "backend": {
+      "title": "Backend Developer",
+      "desc": "APIs robustas, bases de datos y arquitectura de sistemas."
+    },
+    "fullstack": {
+      "title": "Fullstack Developer",
+      "desc": "Dominio completo del stack: frontend, backend e infraestructura."
+    },
+    "uxui": {
+      "title": "Diseñador UX/UI",
+      "desc": "Experiencias de usuario intuitivas y sistemas de diseño escalables."
+    },
+    "data": {
+      "title": "Data Specialist",
+      "desc": "Análisis de datos, visualización e inteligencia artificial."
+    },
+    "devops": {
+      "title": "DevOps Engineer",
+      "desc": "CI/CD, infraestructura cloud y automatización de procesos."
+    },
+    "cta": "Contratar este perfil"
+  },
+  "benefits": {
+    "badge": "¿Por qué Ready?",
+    "title": "La forma más inteligente de crecer tu equipo",
+    "subtitle": "Todo lo que necesitas para contratar talento tech sin fricción.",
+    "speed": {
+      "title": "Onboarding en 48h",
+      "desc": "De la solicitud al primer día de trabajo en menos de dos días hábiles."
+    },
+    "quality": {
+      "title": "Talento verificado",
+      "desc": "Todos los perfiles pasan por evaluación técnica y entrevistas de competencias."
+    },
+    "cost": {
+      "title": "30% más económico",
+      "desc": "Accede a talento senior de LATAM a tarifas competitivas sin sacrificar calidad."
+    },
+    "remote": {
+      "title": "100% remoto",
+      "desc": "Trabaja con el mejor talento sin importar la ubicación geográfica."
+    },
+    "team": {
+      "title": "Soporte dedicado",
+      "desc": "Un account manager asignado para resolver cualquier situación rápidamente."
+    },
+    "scale": {
+      "title": "Escala sin límites",
+      "desc": "Agrega o reduce miembros del equipo según las necesidades de tu negocio."
+    }
+  },
+  "socialProof": {
+    "badge": "Clientes que confían en Ready",
+    "title": "Más de 200 empresas ya trabajan con nosotros",
+    "testimonial1Quote": "Encontramos un desarrollador senior en 3 días. El proceso fue increíblemente fluido y el talento superó nuestras expectativas.",
+    "testimonial1Author": "María González",
+    "testimonial1Role": "CTO",
+    "testimonial1Company": "FinTech MX",
+    "testimonial2Quote": "Ready nos ayudó a escalar nuestro equipo de 3 a 15 personas en menos de dos meses. La calidad del talento es excepcional.",
+    "testimonial2Author": "Carlos Ramírez",
+    "testimonial2Role": "CEO",
+    "testimonial2Company": "StartupHub CO",
+    "testimonial3Quote": "El soporte post-contratación marca la diferencia. Siempre tienen soluciones rápidas y el talento se integra perfectamente.",
+    "testimonial3Author": "Ana Torres",
+    "testimonial3Role": "Head of Engineering",
+    "testimonial3Company": "SaaS Corp AR"
+  },
+  "wizard": {
+    "title": "Contrata tu próximo talento tech",
+    "subtitle": "Cuéntanos qué necesitas y te contactamos en menos de 24 horas.",
+    "step": "Paso {{current}} de {{total}}",
+    "step1Title": "¿Qué perfil buscas?",
+    "step1Subtitle": "Selecciona la especialidad que necesitas para tu equipo.",
+    "step2Title": "¿Cuántas horas necesitas?",
+    "step2Subtitle": "Define la dedicación que requiere el proyecto.",
+    "step3Title": "Datos de contacto",
+    "step3Subtitle": "Te contactaremos con candidatos en menos de 24 horas.",
+    "partTime": "Part-time",
+    "partTimeDesc": "20 horas / semana",
+    "fullTime": "Full-time",
+    "fullTimeDesc": "40 horas / semana",
+    "perProject": "Por proyecto",
+    "perProjectDesc": "Alcance definido",
+    "nameLabel": "Nombre completo",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@empresa.com",
+    "companyLabel": "Empresa",
+    "companyPlaceholder": "Nombre de tu empresa",
+    "messageLabel": "¿Algo más que quieras contarnos?",
+    "messagePlaceholder": "Cuéntanos sobre tu proyecto, stack tecnológico, o cualquier requisito especial...",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "submit": "Enviar solicitud",
+    "submitting": "Enviando...",
+    "successTitle": "¡Solicitud enviada con éxito!",
+    "successMessage": "Gracias por contactarnos. Revisaremos tu solicitud y te escribiremos en las próximas 24 horas con perfiles que se ajusten a tus necesidades.",
+    "successBack": "Volver al inicio",
+    "errorTitle": "Algo salió mal",
+    "errorMessage": "No pudimos enviar tu solicitud. Por favor intenta de nuevo o escríbenos directamente.",
+    "errorRetry": "Intentar de nuevo",
+    "throttleMessage": "Por favor espera un momento antes de enviar otra solicitud.",
+    "required": "Este campo es requerido",
+    "invalidEmail": "Ingresa un correo electrónico válido",
+    "minLength": "Mínimo {{min}} caracteres"
+  },
+  "faq": {
+    "badge": "Preguntas frecuentes",
+    "title": "Resolvemos tus dudas",
+    "subtitle": "Todo lo que necesitas saber antes de dar el siguiente paso.",
+    "q1": "¿Cuánto tiempo tarda el proceso de contratación?",
+    "a1": "Tras completar el formulario, te enviamos 3 perfiles preseleccionados en menos de 48 horas. La incorporación al equipo suele tomar entre 1 y 2 semanas adicionales, dependiendo del proceso de onboarding de tu empresa.",
+    "q2": "¿En qué países trabajan los profesionales de Ready?",
+    "a2": "Contamos con talento en México, Colombia, Argentina, Brasil, Chile, Perú y Uruguay. Todos los profesionales trabajan en zonas horarias compatibles con Norteamérica y Europa, garantizando solapamiento de al menos 4 horas de trabajo diario.",
+    "q3": "¿Cómo verifican la calidad del talento?",
+    "a3": "Cada candidato pasa por una evaluación técnica rigurosa, entrevistas de competencias conductuales y verificación de referencias laborales. Solo el 5% de los aplicantes supera nuestro proceso de selección.",
+    "q4": "¿Qué pasa si el candidato no cumple mis expectativas?",
+    "a4": "Ofrecemos una garantía de sustitución de 30 días. Si el perfil no se adapta a las necesidades de tu equipo, encontramos un reemplazo sin costo adicional ni trámites complicados.",
+    "q5": "¿En qué moneda y cómo funcionan los pagos?",
+    "a5": "Manejamos facturación mensual en USD o moneda local según tu país. Aceptamos transferencia bancaria y los principales medios de pago empresariales. No hay costos ocultos ni tarifas de contratación adicionales.",
+    "q6": "¿Puedo cambiar de dedicación part-time a full-time durante el proyecto?",
+    "a6": "Sí, la flexibilidad es una de nuestras ventajas clave. Puedes escalar o reducir las horas de dedicación con solo 2 semanas de anticipación, adaptándose perfectamente al ritmo de tu negocio."
+  },
+  "about": {
+    "badge": "Nosotros",
+    "title": "Construimos el puente entre el talento y las oportunidades",
+    "subtitle": "Ready nació con una misión clara: democratizar el acceso al talento tech de Latinoamérica y crear oportunidades de trabajo remoto de calidad.",
+    "mission": "Nuestra misión",
+    "missionText": "Conectar a las mejores empresas del mundo con el talento tech más brillante de Latinoamérica, generando impacto económico positivo en ambos lados.",
+    "vision": "Nuestra visión",
+    "visionText": "Ser la plataforma de referencia para contratar talento tech remoto de Latinoamérica en cualquier parte del mundo.",
+    "values": "Nuestros valores",
+    "value1": "Calidad sin compromisos",
+    "value2": "Transparencia total",
+    "value3": "Impacto humano",
+    "value4": "Innovación continua"
+  },
+  "footer": {
+    "tagline": "Talento tech remoto para empresas que quieren crecer.",
+    "navigation": "Navegación",
+    "contact": "Contacto",
+    "email": "hola@joinready.com",
+    "legal": "Legal",
+    "privacy": "Aviso de privacidad",
+    "terms": "Términos de uso",
+    "rights": "© {{year}} Ready. Todos los derechos reservados.",
+    "followUs": "Síguenos"
+  }
+}

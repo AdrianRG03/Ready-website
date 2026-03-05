@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "Ready — Remote Tech Talent for Your Company",
+    "description": "Connect with the best developers, designers, and tech specialists from Latin America. Teams ready to work remotely."
+  },
+  "nav": {
+    "howItWorks": "How it works",
+    "profiles": "Profiles",
+    "benefits": "Benefits",
+    "about": "About",
+    "cta": "Hire now"
+  },
+  "hero": {
+    "badge": "Remote Tech Talent",
+    "title": "Your next great tech team is already",
+    "titleHighlight": "ready to work",
+    "subtitle": "We connect companies with the best developers, designers, and tech specialists from Latin America. Onboarding in days, not months.",
+    "cta": "Hire now",
+    "ctaSecondary": "See profiles",
+    "statsHired": "Professionals hired",
+    "statsCompanies": "Satisfied companies",
+    "statsTime": "Average onboarding days"
+  },
+  "howItWorks": {
+    "badge": "Process",
+    "title": "Simple, fast, and no surprises",
+    "subtitle": "Three steps to have your tech team working.",
+    "step1Title": "Tell us what you need",
+    "step1Desc": "Fill out our form in 2 minutes. Tell us the profile you're looking for and the dedication you need.",
+    "step2Title": "We present candidates",
+    "step2Desc": "Within 48 hours we send you 3 pre-selected profiles, with CV, portfolio, and technical evaluation.",
+    "step3Title": "Start working",
+    "step3Desc": "Choose your favorite candidate. We handle the contract, onboarding, and ongoing support."
+  },
+  "profiles": {
+    "badge": "Specialties",
+    "title": "What profile do you need?",
+    "subtitle": "We have specialists in all areas of technology.",
+    "frontend": {
+      "title": "Frontend Developer",
+      "desc": "Modern, responsive, high-performance web interfaces."
+    },
+    "backend": {
+      "title": "Backend Developer",
+      "desc": "Robust APIs, databases, and systems architecture."
+    },
+    "fullstack": {
+      "title": "Fullstack Developer",
+      "desc": "Full stack mastery: frontend, backend, and infrastructure."
+    },
+    "uxui": {
+      "title": "UX/UI Designer",
+      "desc": "Intuitive user experiences and scalable design systems."
+    },
+    "data": {
+      "title": "Data Specialist",
+      "desc": "Data analysis, visualization, and artificial intelligence."
+    },
+    "devops": {
+      "title": "DevOps Engineer",
+      "desc": "CI/CD, cloud infrastructure, and process automation."
+    },
+    "cta": "Hire this profile"
+  },
+  "benefits": {
+    "badge": "Why Ready?",
+    "title": "The smartest way to grow your team",
+    "subtitle": "Everything you need to hire tech talent without friction.",
+    "speed": {
+      "title": "Onboarding in 48h",
+      "desc": "From request to first day of work in less than two business days."
+    },
+    "quality": {
+      "title": "Verified talent",
+      "desc": "All profiles pass technical evaluation and competency interviews."
+    },
+    "cost": {
+      "title": "30% more affordable",
+      "desc": "Access senior LATAM talent at competitive rates without sacrificing quality."
+    },
+    "remote": {
+      "title": "100% remote",
+      "desc": "Work with the best talent regardless of geographic location."
+    },
+    "team": {
+      "title": "Dedicated support",
+      "desc": "An assigned account manager to quickly resolve any situation."
+    },
+    "scale": {
+      "title": "Scale without limits",
+      "desc": "Add or reduce team members according to your business needs."
+    }
+  },
+  "socialProof": {
+    "badge": "Clients who trust Ready",
+    "title": "More than 200 companies already work with us",
+    "testimonial1Quote": "We found a senior developer in 3 days. The process was incredibly smooth and the talent exceeded our expectations.",
+    "testimonial1Author": "Maria González",
+    "testimonial1Role": "CTO",
+    "testimonial1Company": "FinTech MX",
+    "testimonial2Quote": "Ready helped us scale our team from 3 to 15 people in less than two months. The quality of talent is exceptional.",
+    "testimonial2Author": "Carlos Ramírez",
+    "testimonial2Role": "CEO",
+    "testimonial2Company": "StartupHub CO",
+    "testimonial3Quote": "The post-hiring support makes the difference. They always have quick solutions and the talent integrates perfectly.",
+    "testimonial3Author": "Ana Torres",
+    "testimonial3Role": "Head of Engineering",
+    "testimonial3Company": "SaaS Corp AR"
+  },
+  "wizard": {
+    "title": "Hire your next tech talent",
+    "subtitle": "Tell us what you need and we'll contact you in less than 24 hours.",
+    "step": "Step {{current}} of {{total}}",
+    "step1Title": "What profile are you looking for?",
+    "step1Subtitle": "Select the specialty you need for your team.",
+    "step2Title": "How many hours do you need?",
+    "step2Subtitle": "Define the dedication your project requires.",
+    "step3Title": "Contact details",
+    "step3Subtitle": "We'll contact you with candidates in less than 24 hours.",
+    "partTime": "Part-time",
+    "partTimeDesc": "20 hours / week",
+    "fullTime": "Full-time",
+    "fullTimeDesc": "40 hours / week",
+    "perProject": "Per project",
+    "perProjectDesc": "Defined scope",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@company.com",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Your company name",
+    "messageLabel": "Anything else you'd like to share?",
+    "messagePlaceholder": "Tell us about your project, tech stack, or any special requirements...",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Send request",
+    "submitting": "Sending...",
+    "successTitle": "Request sent successfully!",
+    "successMessage": "Thank you for contacting us. We'll review your request and reach out within the next 24 hours with profiles that match your needs.",
+    "successBack": "Back to home",
+    "errorTitle": "Something went wrong",
+    "errorMessage": "We couldn't send your request. Please try again or contact us directly.",
+    "errorRetry": "Try again",
+    "throttleMessage": "Please wait a moment before sending another request.",
+    "required": "This field is required",
+    "invalidEmail": "Enter a valid email address",
+    "minLength": "Minimum {{min}} characters"
+  },
+  "faq": {
+    "badge": "Frequently asked questions",
+    "title": "We answer your questions",
+    "subtitle": "Everything you need to know before taking the next step.",
+    "q1": "How long does the hiring process take?",
+    "a1": "After completing the form, we send you 3 pre-selected profiles within 48 hours. Onboarding to your team typically takes 1 to 2 additional weeks, depending on your company's onboarding process.",
+    "q2": "In which countries do Ready professionals work?",
+    "a2": "We have talent in Mexico, Colombia, Argentina, Brazil, Chile, Peru, and Uruguay. All professionals work in time zones compatible with North America and Europe, guaranteeing at least 4 hours of daily work overlap.",
+    "q3": "How do you verify talent quality?",
+    "a3": "Each candidate goes through rigorous technical evaluation, behavioral competency interviews, and employment reference checks. Only 5% of applicants pass our selection process.",
+    "q4": "What happens if the candidate doesn't meet my expectations?",
+    "a4": "We offer a 30-day replacement guarantee. If the profile doesn't fit your team's needs, we find a replacement at no additional cost and without complicated paperwork.",
+    "q5": "In which currency and how do payments work?",
+    "a5": "We handle monthly billing in USD or local currency depending on your country. We accept bank transfers and major corporate payment methods. There are no hidden costs or additional hiring fees.",
+    "q6": "Can I change from part-time to full-time dedication during the project?",
+    "a6": "Yes, flexibility is one of our key advantages. You can scale hours up or down with just 2 weeks' notice, adapting perfectly to your business pace."
+  },
+  "about": {
+    "badge": "About us",
+    "title": "We build the bridge between talent and opportunities",
+    "subtitle": "Ready was born with a clear mission: to democratize access to Latin America's tech talent and create quality remote work opportunities.",
+    "mission": "Our mission",
+    "missionText": "Connecting the world's best companies with Latin America's brightest tech talent, generating positive economic impact on both sides.",
+    "vision": "Our vision",
+    "visionText": "To be the reference platform for hiring remote tech talent from Latin America anywhere in the world.",
+    "values": "Our values",
+    "value1": "Quality without compromise",
+    "value2": "Total transparency",
+    "value3": "Human impact",
+    "value4": "Continuous innovation"
+  },
+  "footer": {
+    "tagline": "Remote tech talent for companies that want to grow.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "email": "hello@joinready.com",
+    "legal": "Legal",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "rights": "© {{year}} Ready. All rights reserved.",
+    "followUs": "Follow us"
+  }
+}
