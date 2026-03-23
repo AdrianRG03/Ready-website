@@ -1,10 +1,10 @@
 import type { NavLink, BenefitItem, ProfileCard, SocialLink } from '@/types'
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'nav.howItWorks', href: '#como-funciona' },
-  { label: 'nav.profiles', href: '#perfiles' },
-  { label: 'nav.benefits', href: '#beneficios' },
-  { label: 'nav.about', href: '#nosotros' },
+  { label: 'nav.servicios', href: '#servicios' },
+  { label: 'nav.proceso',   href: '#proceso' },
+  { label: 'nav.perfiles',  href: '#perfiles' },
+  { label: 'nav.atributos', href: '#atributos' },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -15,13 +15,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     name: 'Instagram',
-    href: 'https://www.instagram.com/joinready',
+    href: 'https://www.instagram.com/joinreadylatam',
     icon: 'instagram',
-  },
-  {
-    name: 'X / Twitter',
-    href: 'https://twitter.com/joinready',
-    icon: 'twitter',
   },
 ]
 

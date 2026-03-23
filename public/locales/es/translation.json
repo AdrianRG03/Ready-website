@@ -1,111 +1,133 @@
 {
   "meta": {
-    "title": "Ready — Talento Tech Remoto para tu Empresa",
-    "description": "Conecta con los mejores desarrolladores, diseñadores y especialistas tech de Latinoamérica. Equipos listos para trabajar de forma remota."
+    "title": "Ready | Contrata Talento On demand certificados: Diseñadores UX, UI, Desarrolladores Backend y Frontend, y más.",
+    "description": "Trabaja on demand con talento IT validado pagando localmente por el tiempo trabajado de manera legal, transparente y todo en un mismo lugar."
   },
   "nav": {
-    "howItWorks": "¿Cómo funciona?",
-    "profiles": "Perfiles",
-    "benefits": "Beneficios",
-    "about": "Nosotros",
-    "cta": "Contratar ahora"
+    "servicios": "Servicios",
+    "proceso": "Proceso",
+    "perfiles": "Perfiles",
+    "atributos": "Atributos",
+    "ctaHire": "Quiero Cotizar",
+    "ctaApply": "Quiero postular"
   },
   "hero": {
-    "badge": "Talento Tech Remoto",
-    "title": "Tu próximo gran equipo tech ya está",
-    "titleHighlight": "listo para trabajar",
-    "subtitle": "Conectamos empresas con los mejores desarrolladores, diseñadores y especialistas tech de Latinoamérica. Onboarding en días, no meses.",
-    "cta": "Contratar ahora",
-    "ctaSecondary": "Ver perfiles",
-    "statsHired": "Profesionales contratados",
-    "statsCompanies": "Empresas satisfechas",
-    "statsTime": "Días promedio de onboarding"
+    "title": "Conecta de forma segura tu negocio solo con freelancers tech certificados de LATAM.",
+    "subtitle": "Trabaja on demand con talento IT validado pagando localmente por el tiempo trabajado de manera legal, transparente y todo en un mismo lugar.",
+    "cta": "Quiero cotizar",
+    "badge": "Talento Tech Certificado · LATAM",
+    "stat1": "Freelancers certificados",
+    "stat2": "Empresas clientes",
+    "stat3": "Países de alcance",
+    "cardName": "Adriana Sánchez",
+    "cardRole": "Scrum Master Senior",
+    "cardBadge": "Verificado",
+    "cardWorkedFor": "Trabajó para:"
   },
-  "howItWorks": {
-    "badge": "Proceso",
-    "title": "Simple, rápido y sin sorpresas",
-    "subtitle": "Tres pasos para tener tu equipo tech trabajando.",
-    "step1Title": "Cuéntanos qué necesitas",
-    "step1Desc": "Completa nuestro formulario en 2 minutos. Cuéntanos el perfil que buscas y la dedicación que necesitas.",
-    "step2Title": "Te presentamos candidatos",
-    "step2Desc": "En 48 horas te enviamos 3 perfiles preseleccionados, con CV, portafolio y evaluación técnica.",
-    "step3Title": "Empieza a trabajar",
-    "step3Desc": "Elige tu candidato favorito. Nosotros gestionamos el contrato, onboarding y soporte continuo."
+  "servicios": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Ofrecemos soluciones integrales para tu empresa. Nos encargamos de gestionar talento de alto nivel en Latinoamérica, simplificando procesos y garantizando resultados exitosos.",
+    "cta": "Agenda una llamada",
+    "freelancingTitle": "Freelancing",
+    "freelancingDesc": "Ready gestiona todo: Búsqueda, selección, contratación y pago del freelancer, mientras tú solo firmas con nosotros y recibes facturación local.",
+    "payrollTitle": "Payroll",
+    "payrollDesc": "Gestionamos los pagos de tus talentos en toda Latinoamérica, garantizando seguridad, puntualidad y flexibilidad en USD o moneda local, sin complicaciones.",
+    "headhuntingTitle": "Headhunting",
+    "headhuntingDesc": "Encontramos el profesional ideal para tu equipo y tú te encargas de contratarlo directamente. Solo cobramos por contratación exitosa.",
+    "tagOnDemand": "On Demand",
+    "tagGlobal": "Global",
+    "tagGarantizado": "Garantizado"
+  },
+  "proceso": {
+    "title": "Nuestro Proceso",
+    "readyTitle": "Ready",
+    "readyDesc": "Define el perfil, el seniority y la modalidad de trabajo que necesites ya sea Full time o Part Time.",
+    "setTitle": "Set",
+    "setDesc": "Te presentamos freelancers certificados disponibles que mejor calzan con tu necesidad.",
+    "goTitle": "Go!",
+    "goDesc": "Entrevista y comienza a trabajar con freelancers mientras en Ready nos encargamos de todo el proceso administrativo."
+  },
+  "perfiles": {
+    "title": "Perfiles",
+    "subtitle": "Nuestros perfiles más cotizados dentro de Latam",
+    "explorar": "Explorar",
+    "cta": "Habla con un asesor",
+    "iaTitle": "IA & Automatización",
+    "desarrolloTitle": "Desarrollo",
+    "dataTitle": "Data",
+    "disenoTitle": "Diseño",
+    "marketingTitle": "Marketing"
+  },
+  "selloReady": {
+    "title": "Sello Ready",
+    "clientesLabel": "Clientes Ready",
+    "ctaCall": "Agenda una llamada",
+    "ctaWhatsapp": "Escribe al WhatsApp",
+    "calidadTitle": "Calidad",
+    "calidadDesc": "Entrevistamos y filtramos con rigurosas pruebas técnicas a los mejores talentos tech de Latinoamérica.",
+    "garantiaTitle": "Garantía",
+    "garantiaDesc": "Protegemos y damos seguimiento constante al desempeño de los freelancers Ready.",
+    "flexibilidadTitle": "Flexibilidad",
+    "flexibilidadDesc": "Trabaja por el tiempo que necesites, con los mejores profesionales digitales de Latam sin tener que contratarlos.",
+    "pagoLocalTitle": "Pago local",
+    "pagoLocalDesc": "Facturamos en tu pais de origen y pagamos al freelance en cualquier parte del mundo.",
+    "subtitlePre": "El estándar que",
+    "subtitleHighlight": "garantiza",
+    "subtitlePost": "tu tranquilidad",
+    "description": "Cada freelancer Ready pasa por un proceso riguroso de validación técnica, garantizando calidad, transparencia y resultados desde el primer día.",
+    "tagline": "El talento tech más validado de Latinoamérica"
+  },
+  "clientes": {
+    "title": "Clientes",
+    "heading": "Empresas que confían en"
+  },
+  "testimonios": {
+    "title": "Testimonio de Clientes",
+    "badge": "Testimonios",
+    "verified": "Verificado",
+    "cta": "Cotizar Talento",
+    "t1Quote": "Con Ready hemos tenido una experiencia excelente. Se encargan de todo: contratos, NDAs, facturación y pagos, acompañándonos en cada etapa. Gracias a ellos trabajamos con profesionales de la más alta calidad en Latinoamérica. 100% recomendables.",
+    "t1Name": "Lázaro Mendez",
+    "t1Role": "Business Owner",
+    "t2Quote": "Ready es lo mejor. Nos ayuda muchísimo a armar equipos de freelancers TI súper capacitados, muy rapido y por tiempos flexibles. Los recomiendo cada vez que puedo porque de verdad te resuelven todo!.",
+    "t2Name": "Nicole Opazo",
+    "t2Role": "Product Owner",
+    "t3Quote": "Con Ready resolvimos un gran problema: cumplir con nuestras políticas legales y de proveedores sin complicaciones. Pagamos directamente a Ready y ellos gestionan todo el proceso con los freelancers.",
+    "t3Name": "Jorge Pacheco",
+    "t3Role": "Sub Gerente de Marketing"
+  },
+  "plataforma": {
+    "badge": "Plataforma",
+    "title": "Gestiona a tus freelancers con Ready",
+    "subtitle": "Descubre los elementos clave que hacen de Ready la mejor opción para conectar con talento de alto nivel y gestionar tus proyectos de manera eficiente.",
+    "pagosTitle": "Pagos",
+    "pagosDesc": "Paga a tus talentos desde cualquier parte de Latinoamérica en USD o en la moneda local de tu elección.",
+    "seguimientoTitle": "Seguimiento",
+    "seguimientoDesc": "Realiza un seguimiento efectivo del avance y las horas trabajadas por tu equipo.",
+    "complianceTitle": "Compliance",
+    "complianceDesc": "Cumple con las leyes locales de contratación, siempre protegido a través de nuestros contratos de servicios para talentos de todo Latinoamérica.",
+    "presupuestoTitle": "Control del presupuesto",
+    "presupuestoDesc": "Mantén el control del gasto ya sea por hora, días o semanas, a medida que tus proyectos avanzan."
+  },
+  "network": {
+    "badge": "La red",
+    "title": "La Mayor red de freelancers TI certificados en Latam",
+    "subtitle": "Trabajamos estrechamente con una red de más de 25,000 profesionales certificados y validados, reuniendo al mejor talento TI de Latinoamérica.",
+    "tagline": "Ready: Los mejores freelance digitales de Latinoamérica",
+    "p1Name": "Jorge Gutierrez",
+    "p1Role": "Sr Full-Stack Developer",
+    "p2Name": "Carla Molina",
+    "p2Role": "Sr Frontend Developer",
+    "p3Name": "Math Smith",
+    "p3Role": "Sr DevOps Engineer"
   },
   "profiles": {
-    "badge": "Especialidades",
-    "title": "¿Qué perfil necesitas?",
-    "subtitle": "Contamos con especialistas en todas las áreas de tecnología.",
-    "frontend": {
-      "title": "Frontend Developer",
-      "desc": "Interfaces web modernas, responsivas y de alto rendimiento."
-    },
-    "backend": {
-      "title": "Backend Developer",
-      "desc": "APIs robustas, bases de datos y arquitectura de sistemas."
-    },
-    "fullstack": {
-      "title": "Fullstack Developer",
-      "desc": "Dominio completo del stack: frontend, backend e infraestructura."
-    },
-    "uxui": {
-      "title": "Diseñador UX/UI",
-      "desc": "Experiencias de usuario intuitivas y sistemas de diseño escalables."
-    },
-    "data": {
-      "title": "Data Specialist",
-      "desc": "Análisis de datos, visualización e inteligencia artificial."
-    },
-    "devops": {
-      "title": "DevOps Engineer",
-      "desc": "CI/CD, infraestructura cloud y automatización de procesos."
-    },
-    "cta": "Contratar este perfil"
-  },
-  "benefits": {
-    "badge": "¿Por qué Ready?",
-    "title": "La forma más inteligente de crecer tu equipo",
-    "subtitle": "Todo lo que necesitas para contratar talento tech sin fricción.",
-    "speed": {
-      "title": "Onboarding en 48h",
-      "desc": "De la solicitud al primer día de trabajo en menos de dos días hábiles."
-    },
-    "quality": {
-      "title": "Talento verificado",
-      "desc": "Todos los perfiles pasan por evaluación técnica y entrevistas de competencias."
-    },
-    "cost": {
-      "title": "30% más económico",
-      "desc": "Accede a talento senior de LATAM a tarifas competitivas sin sacrificar calidad."
-    },
-    "remote": {
-      "title": "100% remoto",
-      "desc": "Trabaja con el mejor talento sin importar la ubicación geográfica."
-    },
-    "team": {
-      "title": "Soporte dedicado",
-      "desc": "Un account manager asignado para resolver cualquier situación rápidamente."
-    },
-    "scale": {
-      "title": "Escala sin límites",
-      "desc": "Agrega o reduce miembros del equipo según las necesidades de tu negocio."
-    }
-  },
-  "socialProof": {
-    "badge": "Clientes que confían en Ready",
-    "title": "Más de 200 empresas ya trabajan con nosotros",
-    "testimonial1Quote": "Encontramos un desarrollador senior en 3 días. El proceso fue increíblemente fluido y el talento superó nuestras expectativas.",
-    "testimonial1Author": "María González",
-    "testimonial1Role": "CTO",
-    "testimonial1Company": "FinTech MX",
-    "testimonial2Quote": "Ready nos ayudó a escalar nuestro equipo de 3 a 15 personas en menos de dos meses. La calidad del talento es excepcional.",
-    "testimonial2Author": "Carlos Ramírez",
-    "testimonial2Role": "CEO",
-    "testimonial2Company": "StartupHub CO",
-    "testimonial3Quote": "El soporte post-contratación marca la diferencia. Siempre tienen soluciones rápidas y el talento se integra perfectamente.",
-    "testimonial3Author": "Ana Torres",
-    "testimonial3Role": "Head of Engineering",
-    "testimonial3Company": "SaaS Corp AR"
+    "frontend": { "title": "Frontend Developer" },
+    "backend":  { "title": "Backend Developer" },
+    "fullstack": { "title": "Fullstack Developer" },
+    "uxui":     { "title": "Diseñador UX/UI" },
+    "data":     { "title": "Data Specialist" },
+    "devops":   { "title": "DevOps Engineer" }
   },
   "wizard": {
     "title": "Contrata tu próximo talento tech",
@@ -146,46 +168,38 @@
     "invalidEmail": "Ingresa un correo electrónico válido",
     "minLength": "Mínimo {{min}} caracteres"
   },
-  "faq": {
-    "badge": "Preguntas frecuentes",
-    "title": "Resolvemos tus dudas",
-    "subtitle": "Todo lo que necesitas saber antes de dar el siguiente paso.",
-    "q1": "¿Cuánto tiempo tarda el proceso de contratación?",
-    "a1": "Tras completar el formulario, te enviamos 3 perfiles preseleccionados en menos de 48 horas. La incorporación al equipo suele tomar entre 1 y 2 semanas adicionales, dependiendo del proceso de onboarding de tu empresa.",
-    "q2": "¿En qué países trabajan los profesionales de Ready?",
-    "a2": "Contamos con talento en México, Colombia, Argentina, Brasil, Chile, Perú y Uruguay. Todos los profesionales trabajan en zonas horarias compatibles con Norteamérica y Europa, garantizando solapamiento de al menos 4 horas de trabajo diario.",
-    "q3": "¿Cómo verifican la calidad del talento?",
-    "a3": "Cada candidato pasa por una evaluación técnica rigurosa, entrevistas de competencias conductuales y verificación de referencias laborales. Solo el 5% de los aplicantes supera nuestro proceso de selección.",
-    "q4": "¿Qué pasa si el candidato no cumple mis expectativas?",
-    "a4": "Ofrecemos una garantía de sustitución de 30 días. Si el perfil no se adapta a las necesidades de tu equipo, encontramos un reemplazo sin costo adicional ni trámites complicados.",
-    "q5": "¿En qué moneda y cómo funcionan los pagos?",
-    "a5": "Manejamos facturación mensual en USD o moneda local según tu país. Aceptamos transferencia bancaria y los principales medios de pago empresariales. No hay costos ocultos ni tarifas de contratación adicionales.",
-    "q6": "¿Puedo cambiar de dedicación part-time a full-time durante el proyecto?",
-    "a6": "Sí, la flexibilidad es una de nuestras ventajas clave. Puedes escalar o reducir las horas de dedicación con solo 2 semanas de anticipación, adaptándose perfectamente al ritmo de tu negocio."
-  },
-  "about": {
-    "badge": "Nosotros",
-    "title": "Construimos el puente entre el talento y las oportunidades",
-    "subtitle": "Ready nació con una misión clara: democratizar el acceso al talento tech de Latinoamérica y crear oportunidades de trabajo remoto de calidad.",
-    "mission": "Nuestra misión",
-    "missionText": "Conectar a las mejores empresas del mundo con el talento tech más brillante de Latinoamérica, generando impacto económico positivo en ambos lados.",
-    "vision": "Nuestra visión",
-    "visionText": "Ser la plataforma de referencia para contratar talento tech remoto de Latinoamérica en cualquier parte del mundo.",
-    "values": "Nuestros valores",
-    "value1": "Calidad sin compromisos",
-    "value2": "Transparencia total",
-    "value3": "Impacto humano",
-    "value4": "Innovación continua"
-  },
   "footer": {
-    "tagline": "Talento tech remoto para empresas que quieren crecer.",
-    "navigation": "Navegación",
-    "contact": "Contacto",
-    "email": "hola@joinready.com",
-    "legal": "Legal",
-    "privacy": "Aviso de privacidad",
-    "terms": "Términos de uso",
-    "rights": "© {{year}} Ready. Todos los derechos reservados.",
-    "followUs": "Síguenos"
+    "cta": "Trabaja con los mejores freelancers Tech de Latinoamérica.",
+    "ctaBtn": "Quiero Cotizar",
+    "readyLabel": "Ready",
+    "perfilesLabel": "Perfiles",
+    "siguenos": "Síguenos",
+    "rights": "2026 - Todos los derechos reservados",
+    "cookies": "Política de Cookies",
+    "terminos": "Términos y condiciones",
+    "aviso": "Aviso legal",
+    "navServicios": "Servicios",
+    "navProceso": "Proceso",
+    "navPerfiles": "Perfiles",
+    "navAtributos": "Atributos",
+    "navNosotros": "Nosotros",
+    "navLaRed": "La Red",
+    "linkDesarrollo": "Desarrollo",
+    "linkData": "Data",
+    "linkDiseno": "Diseño",
+    "linkMarketing": "Marketing",
+    "linkIA": "IA & Automatización",
+    "bannerTag": "¿Listo para empezar?",
+    "bannerTitle1": "Trabaja con los mejores",
+    "bannerTitleHighlight": "freelancers Tech",
+    "bannerTitle2": "de Latinoamérica",
+    "bannerCta": "Agenda una llamada",
+    "description": "Conectamos empresas con el talento tech más validado de Latinoamérica.",
+    "colNav": "Navegación",
+    "colPerfiles": "Perfiles",
+    "colContacto": "Contacto",
+    "contactCall": "Agenda una llamada",
+    "contactLinkedin": "LinkedIn",
+    "contactInstagram": "Instagram"
   }
 }

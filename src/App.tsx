@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { Layout } from '@/components/layout/Layout'
 import { Home } from '@/pages/Home'
+import { ProfilePage } from '@/pages/ProfilePage'
+import { ScrollToTop } from '@/components/ScrollToTop'
 import '@/i18n/config'
 
 function LoadingFallback() {
@@ -20,17 +22,27 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Suspense fallback={<LoadingFallback />}>
-          <Layout>
-            <Routes>
-              {/* ES (default) */}
-              <Route path="/" element={<Home />} />
-              {/* EN locale */}
-              <Route path="/en/*" element={<Home />} />
-              {/* Catch-all → home */}
-              <Route path="*" element={<Home />} />
+          <Routes>
+              {/* Profile sub-pages — ES (no Layout wrapper) */}
+              <Route path="/perfiles/:category/:profile" element={<ProfilePage />} />
+              {/* Profile sub-pages — EN */}
+              <Route path="/en/perfiles/:category/:profile" element={<ProfilePage />} />
+              {/* All other pages use Layout */}
+              <Route path="*" element={
+                <Layout>
+                  <Routes>
+                    {/* ES (default) */}
+                    <Route path="/" element={<Home />} />
+                    {/* EN locale */}
+                    <Route path="/en/*" element={<Home />} />
+                    {/* Catch-all → home */}
+                    <Route path="*" element={<Home />} />
+                  </Routes>
+                </Layout>
+              } />
             </Routes>
-          </Layout>
         </Suspense>
       </BrowserRouter>
     </HelmetProvider>

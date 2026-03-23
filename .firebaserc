@@ -1,13 +1,5 @@
 {
   "projects": {
-    "default": "ats-ready-v1"
-  },
-  "targets": {
-    "ats-ready-v1": {
-      "hosting": {
-        "ready-website": ["ready-website"],
-        "ready-website-staging": ["ready-website-staging"]
-      }
-    }
+    "default": "ready-825d4"
   }
 }
