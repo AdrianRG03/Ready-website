@@ -1,112 +1,302 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { Container, Badge, Icon } from '@/components/ui'
+import { Container } from '@/components/ui'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
-const FAQ_ITEMS = [
-  { q: 'faq.q1', a: 'faq.a1' },
-  { q: 'faq.q2', a: 'faq.a2' },
-  { q: 'faq.q3', a: 'faq.a3' },
-  { q: 'faq.q4', a: 'faq.a4' },
-  { q: 'faq.q5', a: 'faq.a5' },
-  { q: 'faq.q6', a: 'faq.a6' },
+const PLATFORM_FEATURES = [
+  {
+    key: 'pagos',
+    titleKey: 'plataforma.pagosTitle',
+    descKey:  'plataforma.pagosDesc',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+        <line x1="1" y1="10" x2="23" y2="10" />
+      </svg>
+    ),
+  },
+  {
+    key: 'seguimiento',
+    titleKey: 'plataforma.seguimientoTitle',
+    descKey:  'plataforma.seguimientoDesc',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
+  },
+  {
+    key: 'compliance',
+    titleKey: 'plataforma.complianceTitle',
+    descKey:  'plataforma.complianceDesc',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <polyline points="9 12 11 14 15 10" />
+      </svg>
+    ),
+  },
+  {
+    key: 'presupuesto',
+    titleKey: 'plataforma.presupuestoTitle',
+    descKey:  'plataforma.presupuestoDesc',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23" />
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      </svg>
+    ),
+  },
 ]
 
+/* ── Dashboard Mockup ───────────────────────────────────── */
+const FREELANCERS = [
+  { name: 'Ana Torres',    role: 'Frontend Dev',   hours: 38, status: 'Activo',   pct: 95 },
+  { name: 'Carlos Ruiz',   role: 'Backend Dev',    hours: 22, status: 'Activo',   pct: 55 },
+  { name: 'Sofía Méndez',  role: 'UX Designer',    hours: 40, status: 'Activo',   pct: 100 },
+  { name: 'Diego Parra',   role: 'Data Analyst',   hours: 15, status: 'Pausado',  pct: 37 },
+]
+
+function DashboardMockup() {
+  return (
+    <motion.div
+      className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl"
+      style={{ border: '1px solid rgba(0,0,0,0.08)' }}
+      initial={{ opacity: 0, y: 30, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {/* ── Top bar ── */}
+      <div
+        className="flex items-center justify-between px-5 py-3.5"
+        style={{ background: '#0f3d2e' }}
+      >
+        <div className="flex items-center gap-2">
+          <span className="text-white font-bold text-sm tracking-wide">ready</span>
+          <span
+            className="text-[10px] px-2 py-0.5 rounded-full font-bold"
+            style={{ background: 'rgba(232,217,91,0.2)', color: '#e8d95b' }}
+          >
+            Dashboard
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold"
+            style={{ background: 'rgba(232,217,91,0.25)', color: '#e8d95b' }}>
+            AR
+          </div>
+        </div>
+      </div>
+
+      {/* ── Métricas ── */}
+      <div
+        className="grid grid-cols-3 gap-px"
+        style={{ background: '#e5e7eb' }}
+      >
+        {[
+          { label: 'Freelancers', value: '12', icon: '👥' },
+          { label: 'Horas / sem',  value: '284', icon: '⏱' },
+          { label: 'Pagos USD',    value: '$9.4k', icon: '💳' },
+        ].map((m) => (
+          <div key={m.label} className="bg-white px-4 py-3 text-center">
+            <div className="text-lg mb-0.5">{m.icon}</div>
+            <div className="font-bold text-gray-900 text-base leading-none">{m.value}</div>
+            <div className="text-gray-400 text-[10px] mt-1">{m.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Tabla freelancers ── */}
+      <div className="bg-white px-5 pt-4 pb-2">
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-xs font-bold text-gray-700">Equipo activo</span>
+          <span className="text-[10px] text-[#1a5c45] font-semibold cursor-pointer">Ver todos →</span>
+        </div>
+
+        <div className="flex flex-col gap-2.5">
+          {FREELANCERS.map((f, i) => (
+            <motion.div
+              key={f.name}
+              className="flex items-center gap-3"
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 + i * 0.08 }}
+            >
+              {/* Avatar */}
+              <div
+                className="w-7 h-7 rounded-full flex items-center justify-center text-[9px] font-bold shrink-0"
+                style={{ background: 'linear-gradient(135deg, #1a5c45, #0f3d2e)', color: '#e8d95b' }}
+              >
+                {f.name.split(' ').map(n => n[0]).join('')}
+              </div>
+
+              {/* Info */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[11px] font-semibold text-gray-800 truncate">{f.name}</span>
+                  <span className="text-[10px] text-gray-400 ml-2 shrink-0">{f.hours}h</span>
+                </div>
+                {/* Progress bar */}
+                <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
+                  <motion.div
+                    className="h-full rounded-full"
+                    style={{
+                      background: f.status === 'Pausado'
+                        ? 'linear-gradient(to right, #d1d5db, #9ca3af)'
+                        : 'linear-gradient(to right, #1a5c45, #e8d95b)',
+                    }}
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${f.pct}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.4 + i * 0.1, ease: 'easeOut' }}
+                  />
+                </div>
+              </div>
+
+              {/* Status badge */}
+              <span
+                className="text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0"
+                style={f.status === 'Activo'
+                  ? { background: 'rgba(26,92,69,0.1)', color: '#1a5c45' }
+                  : { background: 'rgba(156,163,175,0.15)', color: '#6b7280' }
+                }
+              >
+                {f.status}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Footer dashboard ── */}
+      <div
+        className="flex items-center justify-between px-5 py-3 bg-gray-50 border-t border-gray-100"
+      >
+        <span className="text-[10px] text-gray-400">Actualizado hace 2 min</span>
+        <div className="flex items-center gap-1">
+          <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+          <span className="text-[10px] text-gray-500">En vivo</span>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
+/* ── Componente principal ───────────────────────────────── */
 export function FAQ() {
   const { t } = useTranslation()
-  const { ref, isInView, variants } = useScrollAnimation()
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
-
-  function toggle(i: number) {
-    setOpenIndex(prev => (prev === i ? null : i))
-  }
+  const { ref, isInView } = useScrollAnimation()
 
   return (
     <section
-      id="faq"
-      aria-labelledby="faq-heading"
-      className="py-24 bg-white"
+      id="plataforma"
+      aria-labelledby="plataforma-heading"
+      className="relative py-28 overflow-hidden bg-white"
     >
-      <Container>
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-        >
-          {/* Header */}
-          <motion.div variants={variants} className="text-center mb-14">
-            <Badge className="mb-4">{t('faq.badge')}</Badge>
-            <h2
-              id="faq-heading"
-              className="font-display text-3xl sm:text-4xl font-bold text-gray-900"
+      {/* Decoración top */}
+      <div
+        className="absolute top-0 left-0 right-0 h-1"
+        style={{ background: 'linear-gradient(to right, transparent, #1a5c45, #e8d95b, #1a5c45, transparent)' }}
+      />
+
+      {/* Blob decorativo verde sutil */}
+      <div
+        className="absolute -right-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl pointer-events-none"
+        style={{ background: 'rgba(26,92,69,0.06)' }}
+        aria-hidden="true"
+      />
+
+      <Container className="relative z-10">
+        <div ref={ref}>
+
+          {/* ── Header ── */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 28 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span
+              className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
+              style={{ background: 'rgba(26,92,69,0.08)', color: '#1a5c45', border: '1px solid rgba(26,92,69,0.15)' }}
             >
-              {t('faq.title')}
+              {t('plataforma.badge')}
+            </span>
+            <h2
+              id="plataforma-heading"
+              className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+            >
+              {t('plataforma.title')}
             </h2>
-            <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
-              {t('faq.subtitle')}
+            <p className="text-gray-500 text-base max-w-xl mx-auto leading-relaxed">
+              {t('plataforma.subtitle')}
             </p>
           </motion.div>
 
-          {/* Accordion */}
-          <div className="max-w-3xl mx-auto space-y-3">
-            {FAQ_ITEMS.map((item, i) => {
-              const isOpen = openIndex === i
-              return (
-                <motion.div key={item.q} variants={variants}>
-                  <div
-                    className={`border rounded-2xl overflow-hidden transition-colors duration-200 ${
-                      isOpen
-                        ? 'border-brand-200 bg-brand-50/50 shadow-sm'
-                        : 'border-gray-100 bg-white'
-                    }`}
-                  >
-                    {/* Question button */}
-                    <button
-                      className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-inset"
-                      onClick={() => toggle(i)}
-                      aria-expanded={isOpen}
-                      aria-controls={`faq-answer-${i}`}
-                      id={`faq-question-${i}`}
-                    >
-                      <span className="font-semibold text-gray-900 text-sm sm:text-base pr-2">
-                        {t(item.q)}
-                      </span>
-                      <motion.span
-                        animate={{ rotate: isOpen ? 45 : 0 }}
-                        transition={{ duration: 0.22, ease: 'easeInOut' }}
-                        className="shrink-0 text-brand-600"
-                      >
-                        <Icon name="plus" size={20} />
-                      </motion.span>
-                    </button>
+          {/* ── Split layout ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 xl:gap-20 items-center">
 
-                    {/* Answer panel */}
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          id={`faq-answer-${i}`}
-                          role="region"
-                          aria-labelledby={`faq-question-${i}`}
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                          className="overflow-hidden"
-                        >
-                          <p className="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
-                            {t(item.a)}
-                          </p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+            {/* Izquierda: features */}
+            <div className="flex flex-col gap-0">
+              {PLATFORM_FEATURES.map((feature, i) => (
+                <motion.div
+                  key={feature.key}
+                  className="group flex items-start gap-4 py-5"
+                  style={{
+                    borderTop: i === 0 ? '1px solid rgba(0,0,0,0.07)' : undefined,
+                    borderBottom: '1px solid rgba(0,0,0,0.07)',
+                  }}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.15 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {/* Ícono */}
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110"
+                    style={{
+                      background: 'rgba(26,92,69,0.08)',
+                      color: '#1a5c45',
+                      border: '1px solid rgba(26,92,69,0.12)',
+                    }}
+                  >
+                    {feature.icon}
+                  </div>
+
+                  {/* Texto */}
+                  <div className="flex-1">
+                    <h3 className="font-bold text-gray-900 text-sm mb-1">
+                      {t(feature.titleKey)}
+                    </h3>
+                    <p className="text-gray-500 text-xs leading-relaxed">
+                      {t(feature.descKey)}
+                    </p>
+                  </div>
+
+                  {/* Check verde */}
+                  <div className="shrink-0 mt-1">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="rgba(26,92,69,0.4)" strokeWidth={2.5}
+                      strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
                   </div>
                 </motion.div>
-              )
-            })}
+              ))}
+            </div>
+
+            {/* Derecha: dashboard mockup */}
+            <div className="flex justify-center lg:justify-end">
+              <DashboardMockup />
+            </div>
+
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   )

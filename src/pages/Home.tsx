@@ -2,12 +2,13 @@ import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
 import { Hero } from '@/components/sections/Hero'
 import { HowItWorks } from '@/components/sections/HowItWorks'
-import { Profiles } from '@/components/sections/Profiles'
 import { Benefits } from '@/components/sections/Benefits'
-import { SocialProof } from '@/components/sections/SocialProof'
-import { WizardForm } from '@/components/sections/WizardForm/WizardForm'
+import { Profiles } from '@/components/sections/Profiles'
 import { About } from '@/components/sections/About'
+import { SocialProof } from '@/components/sections/SocialProof'
 import { FAQ } from '@/components/sections/FAQ'
+import { Network } from '@/components/sections/Network'
+
 
 export function Home() {
   const { t, i18n } = useTranslation()
@@ -51,20 +52,37 @@ export function Home() {
             description: t('meta.description'),
             sameAs: [
               'https://www.linkedin.com/company/joinready',
-              'https://twitter.com/joinready',
+              'https://www.instagram.com/joinreadylatam',
             ],
           })}
         </script>
       </Helmet>
 
+      {/* 1. Hero */}
       <Hero />
+
+      {/* 2. Nuestros Servicios (Freelancing / Payroll / Headhunting) */}
       <HowItWorks />
-      <Profiles />
+
+      {/* 3. Nuestro Proceso (Ready → Set → Go!) */}
       <Benefits />
-      <SocialProof />
-      <FAQ />
-      <WizardForm />
+
+      {/* 4. Perfiles (5 categorías) */}
+      <Profiles />
+
+      {/* 5. Sello Ready (4 atributos + logos + CTAs) */}
       <About />
+
+      {/* 6. Clientes + Testimonio de Clientes */}
+      <SocialProof />
+
+      {/* 7. Gestiona tus freelancers (4 features + iPad) */}
+      <FAQ />
+
+      {/* 8. La Mayor red de freelancers TI */}
+      <Network />
+
+
     </>
   )
 }

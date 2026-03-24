@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { analytics } from '@/lib/analytics'
@@ -7,63 +8,101 @@ interface LanguageSwitcherProps {
   className?: string
 }
 
+const LOCALES = [
+  { code: 'es', flagCode: 'es', label: 'Español' },
+  { code: 'en', flagCode: 'us', label: 'English' },
+] as const
+
 export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   const { i18n } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
 
-  const currentLocale = i18n.language.startsWith('en') ? 'en' : 'es'
+  // URL is the source of truth for the current language
+  const currentLocale = location.pathname.startsWith('/en') ? 'en' : 'es'
+  const current = LOCALES.find(l => l.code === currentLocale) ?? LOCALES[0]
 
   function switchLanguage(locale: 'es' | 'en') {
     const { pathname, search, hash } = location
     const isEnPath = pathname.startsWith('/en')
-
-    // Guard: already on the correct URL path for this locale — nothing to do
+    setOpen(false)
     if ((locale === 'en') === isEnPath) return
-
     analytics.trackLanguageSwitch(locale)
-
-    // Compute target path from URL (not from i18n locale, which may mismatch
-    // when the browser navigator language differs from the site's default 'es')
-    const newPath = locale === 'en'
-      ? `/en${pathname}`                      // / → /en/
-      : pathname.slice('/en'.length) || '/'   // /en/ → /
-
+    const newPath =
+      locale === 'en'
+        ? `/en${pathname}`
+        : pathname.slice('/en'.length) || '/'
     navigate(newPath + search + hash, { replace: true })
     i18n.changeLanguage(locale)
   }
 
+  // Close on outside click
+  useEffect(() => {
+    function onClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', onClickOutside)
+    return () => document.removeEventListener('mousedown', onClickOutside)
+  }, [])
+
   return (
-    <div
-      className={cn('flex items-center gap-1 text-sm font-medium', className)}
-      role="group"
-      aria-label="Selector de idioma / Language selector"
-    >
+    <div ref={ref} className={cn('relative', className)}>
       <button
-        onClick={() => switchLanguage('es')}
-        aria-pressed={currentLocale === 'es'}
-        className={cn(
-          'px-2 py-1 rounded transition-colors',
-          currentLocale === 'es'
-            ? 'text-brand-600 font-semibold'
-            : 'text-gray-500 hover:text-gray-900'
-        )}
+        onClick={() => setOpen(v => !v)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label="Selector de idioma"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#e8d95b] text-[#e8d95b] text-sm font-semibold hover:bg-[#e8d95b] hover:text-[#1a5c45] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e8d95b]"
       >
-        ES
+        <img
+          src={`https://flagcdn.com/w20/${current.flagCode}.png`}
+          alt={current.label}
+          className="w-5 h-auto rounded-sm"
+        />
+        <svg
+          aria-hidden="true"
+          className={cn('w-3 h-3 transition-transform', open && 'rotate-180')}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2.5}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
       </button>
-      <span className="text-gray-300" aria-hidden="true">|</span>
-      <button
-        onClick={() => switchLanguage('en')}
-        aria-pressed={currentLocale === 'en'}
-        className={cn(
-          'px-2 py-1 rounded transition-colors',
-          currentLocale === 'en'
-            ? 'text-brand-600 font-semibold'
-            : 'text-gray-500 hover:text-gray-900'
-        )}
-      >
-        EN
-      </button>
+
+      {open && (
+        <ul
+          role="listbox"
+          aria-label="Idioma"
+          className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50"
+        >
+          {LOCALES.map(locale => (
+            <li key={locale.code} role="option" aria-selected={locale.code === currentLocale}>
+              <button
+                onClick={() => switchLanguage(locale.code)}
+                className={cn(
+                  'w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors',
+                  locale.code === currentLocale
+                    ? 'bg-[#1a5c45]/10 text-[#1a5c45] font-semibold'
+                    : 'text-gray-700 hover:bg-gray-50'
+                )}
+              >
+                <img
+                  src={`https://flagcdn.com/w20/${locale.flagCode}.png`}
+                  alt={locale.label}
+                  className="w-5 h-auto rounded-sm"
+                />
+                {locale.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
