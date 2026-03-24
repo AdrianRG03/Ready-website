@@ -41,7 +41,7 @@ function VideoPlayer() {
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.div
               className="flex items-center justify-center rounded-full"
-              style={{ width: 56, height: 56, background: '#ff4d2e', boxShadow: '0 6px 24px rgba(255,77,46,0.5)' }}
+              style={{ width: 56, height: 56, background: '#F0FAB4', boxShadow: '0 6px 24px rgba(200,250,180,0.5)' }}
               whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -109,7 +109,7 @@ function LatamMap({ active }: { active: typeof FREELANCERS[0] }) {
                     width: 28, height: 28,
                     top: '50%', left: '50%',
                     transform: 'translate(-50%, -50%)',
-                    border: '1.5px solid rgba(200,245,0,0.5)',
+                    border: '1.5px solid rgba(200,250,180,0.5)',
                   }}
                   animate={{ scale: [1, 2.2], opacity: [0.7, 0] }}
                   transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut' }}
@@ -120,7 +120,7 @@ function LatamMap({ active }: { active: typeof FREELANCERS[0] }) {
                     width: 20, height: 20,
                     top: '50%', left: '50%',
                     transform: 'translate(-50%, -50%)',
-                    border: '1.5px solid rgba(200,245,0,0.35)',
+                    border: '1.5px solid rgba(200,250,180,0.35)',
                   }}
                   animate={{ scale: [1, 1.8], opacity: [0.5, 0] }}
                   transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut', delay: 0.3 }}
@@ -134,8 +134,8 @@ function LatamMap({ active }: { active: typeof FREELANCERS[0] }) {
               animate={{
                 width: isActive ? 12 : 7,
                 height: isActive ? 12 : 7,
-                background: isActive ? '#c8f500' : 'rgba(200,245,0,0.45)',
-                boxShadow: isActive ? '0 0 12px rgba(200,245,0,0.8)' : 'none',
+                background: isActive ? '#F0FAB4' : 'rgba(200,250,180,0.45)',
+                boxShadow: isActive ? '0 0 12px rgba(200,250,180,0.8)' : 'none',
               }}
               transition={{ duration: 0.35 }}
               style={{ transform: 'translate(-50%, -50%)', position: 'absolute', top: '50%', left: '50%' }}
@@ -152,7 +152,7 @@ function LatamMap({ active }: { active: typeof FREELANCERS[0] }) {
               style={{
                 top: '50%', left: '50%',
                 transform: 'translate(-50%, -50%)',
-                background: '#0f3d2e',
+                background: '#0F5C4A',
               }}
             />
           </div>
@@ -182,7 +182,7 @@ function LatamMap({ active }: { active: typeof FREELANCERS[0] }) {
             style={{
               [active.side === 'right' ? 'left' : 'right']: -12,
               width: 12, height: 1,
-              background: 'linear-gradient(to right, transparent, rgba(200,245,0,0.5))',
+              background: 'linear-gradient(to right, transparent, rgba(200,250,180,0.5))',
             }}
           />
 
@@ -191,7 +191,7 @@ function LatamMap({ active }: { active: typeof FREELANCERS[0] }) {
             className="flex items-center gap-3 px-3 py-2.5 rounded-xl whitespace-nowrap"
             style={{
               background: 'linear-gradient(135deg, rgba(26,80,58,0.97), rgba(12,48,34,0.97))',
-              border: '1px solid rgba(200,245,0,0.28)',
+              border: '1px solid rgba(200,250,180,0.28)',
               boxShadow: '0 8px 28px rgba(0,0,0,0.55)',
               backdropFilter: 'blur(14px)',
             }}
@@ -200,9 +200,9 @@ function LatamMap({ active }: { active: typeof FREELANCERS[0] }) {
             <div
               className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-[10px] shrink-0"
               style={{
-                background: 'linear-gradient(135deg, #2a7a5a, #0f3d2e)',
-                color: '#c8f500',
-                border: '1.5px solid rgba(200,245,0,0.35)',
+                background: 'linear-gradient(135deg, #2A7A5A, #0F5C4A)',
+                color: '#F0FAB4',
+                border: '1.5px solid rgba(200,250,180,0.35)',
               }}
             >
               {active.initials}
@@ -219,7 +219,7 @@ function LatamMap({ active }: { active: typeof FREELANCERS[0] }) {
                 />
               </div>
               <p className="text-white/50 text-[10px] leading-none mb-0.5">{active.role}</p>
-              <p className="text-[10px] font-semibold leading-none" style={{ color: 'rgba(200,245,0,0.7)' }}>
+              <p className="text-[10px] font-semibold leading-none" style={{ color: 'rgba(200,250,180,0.7)' }}>
                 {active.country}
               </p>
             </div>
@@ -228,9 +228,9 @@ function LatamMap({ active }: { active: typeof FREELANCERS[0] }) {
             <div
               className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold ml-1 shrink-0"
               style={{
-                background: 'rgba(200,245,0,0.12)',
-                color: '#c8f500',
-                border: '1px solid rgba(200,245,0,0.22)',
+                background: 'rgba(200,250,180,0.12)',
+                color: '#F0FAB4',
+                border: '1px solid rgba(200,250,180,0.22)',
               }}
             >
               <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -262,20 +262,8 @@ export function Network() {
       id="network"
       aria-labelledby="network-heading"
       className="relative py-28 overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, #0a2e22 0%, #0f3d2e 50%, #0a2e22 100%)' }}
+      style={{ background: '#EAEAEA' }}
     >
-      {/* Textura hexagonal */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="hex-network" x="0" y="0" width="56" height="48" patternUnits="userSpaceOnUse">
-              <polygon points="14,2 42,2 56,24 42,46 14,46 0,24"
-                fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#hex-network)" />
-        </svg>
-      </div>
 
       <Container className="relative z-10">
         <div ref={ref}>
@@ -289,14 +277,14 @@ export function Network() {
           >
             <span
               className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
-              style={{ background: 'rgba(255,77,46,0.15)', color: '#ff7a5e', border: '1px solid rgba(255,77,46,0.25)' }}
+              style={{ background: 'rgba(15,92,74,0.08)', color: '#0F5C4A', border: '1px solid rgba(15,92,74,0.2)' }}
             >
               {t('network.badge')}
             </span>
-            <h2 id="network-heading" className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 id="network-heading" className="font-display text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#1c2419' }}>
               {t('network.title')}
             </h2>
-            <p className="text-white/55 text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-base max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(28,36,25,0.6)' }}>
               {t('network.subtitle')}
             </p>
           </motion.div>
@@ -323,7 +311,8 @@ export function Network() {
 
           {/* Tagline */}
           <motion.p
-            className="text-center text-white/30 text-sm mt-14"
+            className="text-center text-sm mt-14"
+            style={{ color: 'rgba(28,36,25,0.4)' }}
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.6 }}

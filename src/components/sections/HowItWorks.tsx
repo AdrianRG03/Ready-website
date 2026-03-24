@@ -65,7 +65,7 @@ const SERVICES = [
     descKey:  'servicios.freelancingDesc',
     tagKey:   'servicios.tagOnDemand',
     number:   '01',
-    gradient: 'linear-gradient(145deg, #1c6349 0%, #0f3d2e 100%)',
+    gradient: 'linear-gradient(145deg, #1A6B58 0%, #0F5C4A 100%)',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round">
@@ -82,7 +82,7 @@ const SERVICES = [
     descKey:  'servicios.payrollDesc',
     tagKey:   'servicios.tagGlobal',
     number:   '02',
-    gradient: 'linear-gradient(145deg, #1a5c45 0%, #0c3326 100%)',
+    gradient: 'linear-gradient(145deg, #0F5C4A 0%, #062A1E 100%)',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round">
@@ -99,7 +99,7 @@ const SERVICES = [
     descKey:  'servicios.headhuntingDesc',
     tagKey:   'servicios.tagGarantizado',
     number:   '03',
-    gradient: 'linear-gradient(145deg, #174f3c 0%, #0a2e22 100%)',
+    gradient: 'linear-gradient(145deg, #134A38 0%, #052318 100%)',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round">
@@ -145,8 +145,8 @@ export function HowItWorks() {
                 href="https://calendly.com/montse-thu/30min?month=2026-03"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm border-2 transition-all duration-200 hover:bg-[#ff4d2e] hover:text-white hover:border-[#ff4d2e] hover:shadow-lg"
-                style={{ borderColor: '#ff4d2e', color: '#ff4d2e', background: '#fafaf7' }}
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm border-2 transition-all duration-200 hover:bg-[#F0FAB4] hover:text-[#0F5C4A] hover:border-[#F0FAB4] hover:shadow-lg"
+                style={{ borderColor: '#0F5C4A', color: '#0F5C4A', background: '#fafaf7' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -200,7 +200,7 @@ export function HowItWorks() {
                   <div className="flex items-center justify-between mb-6">
                     <span
                       className="text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-full"
-                      style={{ background: 'rgba(200,245,0,0.15)', color: '#c8f500' }}
+                      style={{ background: 'rgba(200,250,180,0.15)', color: '#F0FAB4' }}
                     >
                       {t(service.tagKey)}
                     </span>
@@ -239,7 +239,7 @@ export function HowItWorks() {
                 {/* Borde inferior coral animado en hover */}
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 h-[3px] origin-left"
-                  style={{ background: 'linear-gradient(90deg, #ff4d2e 0%, #ff7a5e 50%, #ff4d2e 100%)' }}
+                  style={{ background: 'linear-gradient(90deg, #F0FAB4 0%, #D4E860 50%, #F0FAB4 100%)' }}
                   initial={{ scaleX: 0 }}
                   whileHover={{ scaleX: 1 }}
                   transition={{ duration: 0.35, ease: 'easeOut' }}

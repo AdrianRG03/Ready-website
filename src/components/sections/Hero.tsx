@@ -31,16 +31,16 @@ export function Hero() {
       id="inicio"
       aria-label="Sección hero"
       className="relative flex items-center overflow-hidden"
-      style={{ minHeight: '680px', background: '#0f2d20' }}
+      style={{ minHeight: '680px', background: '#0F5C4A' }}
     >
       {/* ── Glows de fondo ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         {/* Glow verde — esquina inferior izquierda */}
         <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(26,92,69,0.45) 0%, transparent 70%)' }} />
-        {/* Glow coral — esquina superior derecha */}
+          style={{ background: 'radial-gradient(circle, rgba(15,92,74,0.45) 0%, transparent 70%)' }} />
+        {/* Glow yellow — esquina superior derecha */}
         <div className="absolute -top-16 right-0 w-[420px] h-[420px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(255,77,46,0.18) 0%, transparent 65%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(200,250,180,0.10) 0%, transparent 65%)' }} />
       </div>
 
       {/* ── Grid texture ── */}
@@ -63,7 +63,7 @@ export function Hero() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to right, #0f2d20 0%, #0f2d20 28%, rgba(8,15,12,0.88) 42%, rgba(8,15,12,0.55) 58%, rgba(8,15,12,0.12) 78%, transparent 100%)',
+            background: 'linear-gradient(to right, #0F5C4A 0%, #0F5C4A 28%, rgba(6,20,16,0.88) 42%, rgba(6,20,16,0.55) 58%, rgba(6,20,16,0.12) 78%, transparent 100%)',
           }}
         />
         {/* Fade inferior */}
@@ -86,9 +86,9 @@ export function Hero() {
           <motion.div variants={itemVariants} className="mb-6">
             <span
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wide"
-              style={{ background: 'rgba(255,77,46,0.15)', color: '#ff7a5e', border: '1px solid rgba(255,77,46,0.25)' }}
+              style={{ background: 'rgba(200,250,180,0.12)', color: '#F0FAB4', border: '1px solid rgba(200,250,180,0.30)' }}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ff4d2e] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#F0FAB4] animate-pulse" />
               {t('hero.badge')}
             </span>
           </motion.div>
@@ -117,8 +117,8 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleCTAClick}
-              className="btn-shimmer inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-base text-white transition-all duration-200 focus-visible:outline-none group"
-              style={{ background: '#ff4d2e', boxShadow: '0 4px 24px rgba(255,77,46,0.38)' }}
+              className="btn-shimmer inline-flex items-center gap-2.5 px-8 py-4 rounded-[6px] font-semibold text-base transition-all duration-200 focus-visible:outline-none group"
+              style={{ background: '#F0FAB4', color: '#0F5C4A', boxShadow: '0 4px 24px rgba(200,250,180,0.38)' }}
             >
               {t('hero.cta')}
               <svg
@@ -142,7 +142,7 @@ export function Hero() {
               { value: '+12',  label: t('hero.stat3') },
             ].map(stat => (
               <div key={stat.value}>
-                <p className="font-display font-bold text-2xl" style={{ color: '#c8f500' }}>{stat.value}</p>
+                <p className="font-display font-bold text-2xl" style={{ color: '#F0FAB4' }}>{stat.value}</p>
                 <p className="text-xs text-white/45 mt-0.5">{stat.label}</p>
               </div>
             ))}
@@ -164,7 +164,7 @@ export function Hero() {
           className="w-6 h-10 rounded-full flex items-start justify-center p-1.5"
           style={{ border: '1.5px solid rgba(255,255,255,0.18)' }}
         >
-          <div className="w-1 h-2.5 rounded-full" style={{ background: 'rgba(255,77,46,0.7)' }} />
+          <div className="w-1 h-2.5 rounded-full" style={{ background: 'rgba(200,250,180,0.7)' }} />
         </motion.div>
       </motion.div>
     </section>

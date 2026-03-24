@@ -74,20 +74,20 @@ function DashboardMockup() {
       {/* ── Top bar ── */}
       <div
         className="flex items-center justify-between px-5 py-3.5"
-        style={{ background: '#0f3d2e' }}
+        style={{ background: '#0F5C4A' }}
       >
         <div className="flex items-center gap-2">
           <span className="text-white font-bold text-sm tracking-wide">ready</span>
           <span
             className="text-[10px] px-2 py-0.5 rounded-full font-bold"
-            style={{ background: 'rgba(232,217,91,0.2)', color: '#e8d95b' }}
+            style={{ background: 'rgba(232,217,91,0.2)', color: '#F0FAB4' }}
           >
             Dashboard
           </span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold"
-            style={{ background: 'rgba(232,217,91,0.25)', color: '#e8d95b' }}>
+            style={{ background: 'rgba(232,217,91,0.25)', color: '#F0FAB4' }}>
             AR
           </div>
         </div>
@@ -115,7 +115,7 @@ function DashboardMockup() {
       <div className="bg-white px-5 pt-4 pb-2">
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs font-bold text-gray-700">Equipo activo</span>
-          <span className="text-[10px] text-[#1a5c45] font-semibold cursor-pointer">Ver todos →</span>
+          <span className="text-[10px] text-[#0F5C4A] font-semibold cursor-pointer">Ver todos →</span>
         </div>
 
         <div className="flex flex-col gap-2.5">
@@ -131,7 +131,7 @@ function DashboardMockup() {
               {/* Avatar */}
               <div
                 className="w-7 h-7 rounded-full flex items-center justify-center text-[9px] font-bold shrink-0"
-                style={{ background: 'linear-gradient(135deg, #1a5c45, #0f3d2e)', color: '#e8d95b' }}
+                style={{ background: 'linear-gradient(135deg, #0F5C4A, #0F5C4A)', color: '#F0FAB4' }}
               >
                 {f.name.split(' ').map(n => n[0]).join('')}
               </div>
@@ -149,7 +149,7 @@ function DashboardMockup() {
                     style={{
                       background: f.status === 'Pausado'
                         ? 'linear-gradient(to right, #d1d5db, #9ca3af)'
-                        : 'linear-gradient(to right, #1a5c45, #e8d95b)',
+                        : 'linear-gradient(to right, #0F5C4A, #F0FAB4)',
                     }}
                     initial={{ width: 0 }}
                     whileInView={{ width: `${f.pct}%` }}
@@ -163,7 +163,7 @@ function DashboardMockup() {
               <span
                 className="text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0"
                 style={f.status === 'Activo'
-                  ? { background: 'rgba(26,92,69,0.1)', color: '#1a5c45' }
+                  ? { background: 'rgba(26,92,69,0.1)', color: '#0F5C4A' }
                   : { background: 'rgba(156,163,175,0.15)', color: '#6b7280' }
                 }
               >
@@ -202,7 +202,7 @@ export function FAQ() {
       {/* Decoración top */}
       <div
         className="absolute top-0 left-0 right-0 h-1"
-        style={{ background: 'linear-gradient(to right, transparent, #1a5c45, #e8d95b, #1a5c45, transparent)' }}
+        style={{ background: 'linear-gradient(to right, transparent, #0F5C4A, #F0FAB4, #0F5C4A, transparent)' }}
       />
 
       {/* Blob decorativo verde sutil */}
@@ -224,7 +224,7 @@ export function FAQ() {
           >
             <span
               className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
-              style={{ background: 'rgba(26,92,69,0.08)', color: '#1a5c45', border: '1px solid rgba(26,92,69,0.15)' }}
+              style={{ background: 'rgba(26,92,69,0.08)', color: '#0F5C4A', border: '1px solid rgba(26,92,69,0.15)' }}
             >
               {t('plataforma.badge')}
             </span>
@@ -261,7 +261,7 @@ export function FAQ() {
                     className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110"
                     style={{
                       background: 'rgba(26,92,69,0.08)',
-                      color: '#1a5c45',
+                      color: '#0F5C4A',
                       border: '1px solid rgba(26,92,69,0.12)',
                     }}
                   >

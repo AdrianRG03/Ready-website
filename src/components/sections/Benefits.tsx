@@ -32,7 +32,7 @@ function BullseyeCircle({ active, delay }: { active: boolean; delay: number }) {
       {/* Anillo exterior animado (pulse) */}
       {active && (
         <motion.div
-          className="absolute rounded-full border border-[#c8f500]/30"
+          className="absolute rounded-full border border-[#F0FAB4]/30"
           style={{ width: 56, height: 56 }}
           animate={{ scale: [1, 1.7], opacity: [0.5, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, delay, ease: 'easeOut' }}
@@ -40,22 +40,22 @@ function BullseyeCircle({ active, delay }: { active: boolean; delay: number }) {
       )}
       {/* Círculo exterior */}
       <div
-        className="absolute rounded-full border-2 border-[#c8f500]/40"
+        className="absolute rounded-full border-2 border-[#F0FAB4]/40"
         style={{ width: 52, height: 52 }}
       />
       {/* Círculo medio */}
       <div
-        className="absolute rounded-full border border-[#c8f500]/25"
+        className="absolute rounded-full border border-[#F0FAB4]/25"
         style={{ width: 36, height: 36 }}
       />
       {/* Núcleo — dot central */}
       <motion.div
         className="relative z-10 w-5 h-5 rounded-full border-2 flex items-center justify-center"
-        style={{ borderColor: '#c8f500', background: 'rgba(200,245,0,0.12)' }}
+        style={{ borderColor: '#F0FAB4', background: 'rgba(200,250,180,0.12)' }}
         animate={active ? { scale: [1, 1.15, 1] } : {}}
         transition={{ duration: 2.5, repeat: Infinity, delay, ease: 'easeInOut' }}
       >
-        <div className="w-2 h-2 rounded-full" style={{ background: '#c8f500' }} />
+        <div className="w-2 h-2 rounded-full" style={{ background: '#F0FAB4' }} />
       </motion.div>
     </div>
   )
@@ -70,7 +70,7 @@ export function Benefits() {
       id="proceso"
       aria-labelledby="proceso-heading"
       className="relative py-24 overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, #0f3d2e 0%, #1a5c45 50%, #0f3d2e 100%)' }}
+      style={{ background: 'linear-gradient(160deg, #0F5C4A 0%, #0F5C4A 50%, #0F5C4A 100%)' }}
     >
       {/* ── Textura hexagonal de fondo (réplica oficial) ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -164,7 +164,7 @@ export function Benefits() {
                       {/* Línea punteada animada */}
                       <motion.line
                         x1="0" y1="14" x2="88" y2="14"
-                        stroke="#c8f500"
+                        stroke="#F0FAB4"
                         strokeWidth="2.5"
                         strokeDasharray="6 5"
                         strokeLinecap="round"
@@ -176,7 +176,7 @@ export function Benefits() {
                       {/* Punta de flecha animada */}
                       <motion.polyline
                         points="80,5 100,14 80,23"
-                        stroke="#c8f500"
+                        stroke="#F0FAB4"
                         strokeWidth="3"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -218,7 +218,7 @@ export function Benefits() {
                     <svg width="28" height="64" viewBox="0 0 28 64" fill="none">
                       <motion.line
                         x1="14" y1="0" x2="14" y2="44"
-                        stroke="#c8f500" strokeWidth="2.5"
+                        stroke="#F0FAB4" strokeWidth="2.5"
                         strokeDasharray="6 5" strokeLinecap="round"
                         initial={{ pathLength: 0, opacity: 0 }}
                         animate={isInView ? { pathLength: 1, opacity: 0.7 } : {}}
@@ -226,7 +226,7 @@ export function Benefits() {
                       />
                       <motion.polyline
                         points="4,38 14,58 24,38"
-                        stroke="#c8f500" strokeWidth="3"
+                        stroke="#F0FAB4" strokeWidth="3"
                         strokeLinecap="round" strokeLinejoin="round"
                         fill="none"
                         initial={{ opacity: 0, scale: 0.5 }}

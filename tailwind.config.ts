@@ -8,17 +8,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        // ── Brand greens ──────────────────────────
+        // ── Brand palette ──────────────────────────
         ready: {
-          green:       '#1a5c45',
-          'green-mid': '#236652',
-          'green-deep':'#0f3d2e',
-          'green-dark':'#080f0c',
-          coral:       '#ff4d2e',
-          'coral-dark':'#e63d20',
-          lime:        '#c8f500',
-          'lime-dim':  '#a3c400',
-          yellow:      '#e8d95b',   // legacy — kept for any remaining uses
+          green:        '#0F5C4A',   // primary — matches joinready.com --primary
+          'green-mid':  '#1A6B58',   // hover / mid tone
+          'green-deep': '#083D2C',   // dark backgrounds
+          'green-dark': '#042419',   // very dark
+          yellow:       '#EEFF78',   // accent CTA — PDF palette "Yellow"
+          'yellow-dark':'#D4E860',   // hover / darker yellow
+          'yellow-soft':'#F0FAB4',   // muted — joinready.com --secondary
+          black:        '#242424',   // PDF palette "Black"
         },
         // ── Neutrals with warm tint ────────────────
         ink: {
@@ -36,8 +35,8 @@ export default {
         },
       },
       fontFamily: {
-        sans:    ['"DM Sans"', 'system-ui', 'sans-serif'],
-        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        sans:    ['"Nunito Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       animation: {
         'fade-in-up':  'fadeInUp 0.65s cubic-bezier(0.22,1,0.36,1) forwards',
@@ -74,13 +73,12 @@ export default {
         },
       },
       boxShadow: {
-        'coral-sm': '0 2px 10px rgba(255,77,46,0.28)',
-        'coral-md': '0 6px 24px rgba(255,77,46,0.35)',
-        'coral-lg': '0 12px 40px rgba(255,77,46,0.30)',
-        'green-sm': '0 2px 10px rgba(26,92,69,0.22)',
-        'green-md': '0 6px 24px rgba(26,92,69,0.30)',
-        'green-lg': '0 12px 40px rgba(26,92,69,0.28)',
-        'lime-sm':  '0 2px 10px rgba(200,245,0,0.30)',
+        'yellow-sm': '0 2px 10px rgba(238,255,120,0.28)',
+        'yellow-md': '0 6px 24px rgba(238,255,120,0.35)',
+        'yellow-lg': '0 12px 40px rgba(238,255,120,0.30)',
+        'green-sm':  '0 2px 10px rgba(15,92,74,0.22)',
+        'green-md':  '0 6px 24px rgba(15,92,74,0.30)',
+        'green-lg':  '0 12px 40px rgba(15,92,74,0.28)',
       },
       screens: {
         xs:  '375px',

@@ -114,7 +114,7 @@ export function Profiles() {
                   style={{
                     background: isOpen ? '#fff' : '#fff',
                     border: isOpen
-                      ? '1px solid rgba(255,77,46,0.35)'
+                      ? '1px solid rgba(200,250,180,0.35)'
                       : '1px solid rgba(0,0,0,0.08)',
                     boxShadow: isOpen
                       ? '0 12px 40px rgba(0,0,0,0.12)'
@@ -125,7 +125,7 @@ export function Profiles() {
                   {/* ── Cabecera: icono + título → navega a la subpágina ── */}
                   <Link
                     to={`${basePath}/perfiles/${cat.slug}/${cat.defaultProfile}`}
-                    className="flex items-center gap-3 px-5 pt-6 pb-4 w-full transition-colors duration-200 hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4d2e] rounded-t-2xl"
+                    className="flex items-center gap-3 px-5 pt-6 pb-4 w-full transition-colors duration-200 hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4] rounded-t-2xl"
                     onClick={() => analytics.trackCTAClick(`profile-category-title-${cat.slug}`)}
                   >
                     {/* Icono */}
@@ -133,7 +133,7 @@ export function Profiles() {
                       className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
                       style={{
                         background: isOpen ? 'rgba(15,45,32,0.12)' : 'rgba(15,45,32,0.07)',
-                        color: '#0f2d20',
+                        color: '#0F5C4A',
                         border: '1px solid rgba(15,45,32,0.15)',
                       }}
                     >
@@ -178,7 +178,7 @@ export function Profiles() {
                               >
                                 <span
                                   className="w-1.5 h-1.5 rounded-full shrink-0"
-                                  style={{ background: '#ff4d2e' }}
+                                  style={{ background: '#F0FAB4' }}
                                 />
                                 {profile.name[lang]}
                               </Link>
@@ -192,7 +192,7 @@ export function Profiles() {
                   {/* ── Footer "Explorar" → abre/cierra el acordeón ── */}
                   <button
                     type="button"
-                    className="mt-auto px-5 py-3.5 border-t flex items-center justify-between w-full transition-colors duration-200 hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0f2d20]"
+                    className="mt-auto px-5 py-3.5 border-t flex items-center justify-between w-full transition-colors duration-200 hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F5C4A]"
                     style={{ borderColor: 'rgba(15,45,32,0.12)', background: 'rgba(15,45,32,0.05)' }}
                     onClick={() => {
                       toggleCategory(cat.slug)
@@ -200,7 +200,7 @@ export function Profiles() {
                     }}
                     aria-expanded={isOpen}
                   >
-                    <span className="font-semibold text-xs" style={{ color: '#0f2d20' }}>
+                    <span className="font-semibold text-xs" style={{ color: '#0F5C4A' }}>
                       {t('perfiles.explorar')}
                     </span>
                     <motion.div
@@ -213,7 +213,7 @@ export function Profiles() {
                       }}
                     >
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
-                        stroke="#0f2d20" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                        stroke="#0F5C4A" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="6 9 12 15 18 9" />
                       </svg>
                     </motion.div>
@@ -234,11 +234,11 @@ export function Profiles() {
               href="https://wa.me/34624607445"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-shimmer inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-sm transition-all duration-200 hover:scale-105 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4d2e]"
+              className="btn-shimmer inline-flex items-center gap-2.5 px-8 py-4 rounded-[6px] font-semibold text-sm transition-all duration-200 hover:scale-105 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4]"
               style={{
-                background: '#ff4d2e',
-                color: '#fff',
-                boxShadow: '0 4px 20px rgba(255,77,46,0.38)',
+                background: '#F0FAB4',
+                color: '#0F5C4A',
+                boxShadow: '0 4px 20px rgba(200,250,180,0.38)',
               }}
             >
               {t('perfiles.cta')}

@@ -56,7 +56,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Selector de idioma"
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#e8d95b] text-[#e8d95b] text-sm font-semibold hover:bg-[#e8d95b] hover:text-[#1a5c45] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e8d95b]"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#F0FAB4] text-[#F0FAB4] text-sm font-semibold hover:bg-[#F0FAB4] hover:text-[#0F5C4A] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4]"
       >
         <img
           src={`https://flagcdn.com/w20/${current.flagCode}.png`}
@@ -88,7 +88,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
                 className={cn(
                   'w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors',
                   locale.code === currentLocale
-                    ? 'bg-[#1a5c45]/10 text-[#1a5c45] font-semibold'
+                    ? 'bg-[#0F5C4A]/10 text-[#0F5C4A] font-semibold'
                     : 'text-gray-700 hover:bg-gray-50'
                 )}
               >

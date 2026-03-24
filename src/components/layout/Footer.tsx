@@ -35,7 +35,7 @@ export function Footer() {
     <footer role="contentinfo" style={{ background: '#fafaf7' }}>
 
       {/* ── CTA Banner ─────────────────────────────────────── */}
-      <div className="relative overflow-hidden" style={{ background: '#080f0c' }}>
+      <div className="relative overflow-hidden" style={{ background: '#042419' }}>
         {/* Grid texture */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
           style={{
@@ -43,12 +43,12 @@ export function Footer() {
             backgroundSize: '48px 48px',
           }}
         />
-        {/* Coral glow */}
+        {/* Yellow glow */}
         <div className="absolute -top-20 right-0 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(255,77,46,0.14) 0%, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(200,250,180,0.10) 0%, transparent 70%)' }} />
         {/* Green glow */}
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(26,92,69,0.30) 0%, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(15,92,74,0.30) 0%, transparent 70%)' }} />
 
         <Container>
           <div className="relative z-10 py-14 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -56,16 +56,16 @@ export function Footer() {
               <p className="text-white/35 text-xs font-bold uppercase tracking-widest mb-2">{t('footer.bannerTag')}</p>
               <h2 className="font-display font-bold text-2xl sm:text-3xl text-white leading-snug max-w-md">
                 {t('footer.bannerTitle1')}<br />
-                <span style={{ color: '#c8f500' }}>{t('footer.bannerTitleHighlight')}</span> {t('footer.bannerTitle2')}
+                <span style={{ color: '#F0FAB4' }}>{t('footer.bannerTitleHighlight')}</span> {t('footer.bannerTitle2')}
               </h2>
             </div>
             <motion.a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-sm text-white"
-              style={{ background: '#ff4d2e', boxShadow: '0 6px 24px rgba(255,77,46,0.38)' }}
-              whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(255,77,46,0.50)' }}
+              className="shrink-0 flex items-center gap-2.5 px-8 py-4 rounded-[6px] font-semibold text-sm"
+              style={{ background: '#F0FAB4', color: '#0F5C4A', boxShadow: '0 6px 24px rgba(200,250,180,0.38)' }}
+              whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(200,250,180,0.50)' }}
               whileTap={{ scale: 0.97 }}
             >
               {t('footer.bannerCta')}
@@ -88,9 +88,11 @@ export function Footer() {
           {/* Col 1: Logo + descripción + redes */}
           <div className="sm:col-span-2 lg:col-span-1">
             <a href="/" aria-label="Ready — Inicio"
-              className="inline-block font-display font-bold text-3xl hover:opacity-75 transition-opacity mb-4"
-              style={{ color: '#080f0c' }}>
-              ready
+              className="inline-block hover:opacity-75 transition-opacity mb-4">
+              <img src="/images/readywhite.png" alt="ready"
+                className="h-8 w-auto"
+                style={{ filter: 'invert(1)' }}
+              />
             </a>
             <p className="text-ink-400 text-sm leading-relaxed mb-6 max-w-xs">
               {t('footer.description')}
@@ -105,7 +107,7 @@ export function Footer() {
                   aria-label={social.name}
                   className="flex items-center justify-center w-9 h-9 rounded-lg transition-colors"
                   style={{ background: '#eef0e9', color: '#8a9680', border: '1px solid #d8ddd1' }}
-                  whileHover={{ background: '#ff4d2e', color: '#fff', borderColor: '#ff4d2e' }}
+                  whileHover={{ background: '#F0FAB4', color: '#0F5C4A', borderColor: '#F0FAB4' }}
                   transition={{ duration: 0.18 }}
                 >
                   <Icon name={social.icon as IconName} size={16} />
@@ -127,7 +129,7 @@ export function Footer() {
                     onClick={e => handleNavClick(e, link.href)}
                     className="group flex items-center gap-2 text-sm text-ink-400 hover:text-ink-900 transition-colors"
                   >
-                    <span className="w-1 h-1 rounded-full bg-[#ff4d2e] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="w-1 h-1 rounded-full bg-[#0F5C4A] opacity-0 group-hover:opacity-100 transition-opacity" />
                     {t(link.labelKey)}
                   </a>
                 </li>
@@ -147,7 +149,7 @@ export function Footer() {
                     href={link.href}
                     className="group flex items-center gap-2 text-sm text-ink-400 hover:text-ink-900 transition-colors"
                   >
-                    <span className="w-1 h-1 rounded-full bg-[#ff4d2e] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="w-1 h-1 rounded-full bg-[#0F5C4A] opacity-0 group-hover:opacity-100 transition-opacity" />
                     {t(link.labelKey)}
                   </a>
                 </li>
@@ -206,7 +208,7 @@ export function Footer() {
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-              stroke="#ff4d2e" strokeWidth={2} strokeLinecap="round">
+              stroke="#0F5C4A" strokeWidth={2} strokeLinecap="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
             <span className="text-xs text-ink-400">© {t('footer.rights')}</span>

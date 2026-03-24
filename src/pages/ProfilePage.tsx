@@ -44,7 +44,7 @@ export function ProfilePage() {
         <p className="text-white/60 text-lg">
           {isEN ? 'Profile not found.' : 'Perfil no encontrado.'}
         </p>
-        <Link to={`${basePath}/`} className="px-6 py-3 rounded-lg font-semibold text-white transition-colors" style={{ background: '#ff4d2e' }}>
+        <Link to={`${basePath}/`} className="px-6 py-3 rounded-lg font-semibold transition-colors" style={{ background: '#F0FAB4', color: '#0F5C4A' }}>
           {isEN ? 'Go to home' : 'Ir al inicio'}
         </Link>
       </div>
@@ -55,7 +55,7 @@ export function ProfilePage() {
     <div className="min-h-screen flex flex-col">
 
       {/* ─── Profile Sub-Navbar ─────────────────────────────── */}
-      <header className="sticky top-0 z-50" style={{ background: '#0f2d20', borderBottom: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 4px 20px rgba(0,0,0,0.35)' }}>
+      <header className="sticky top-0 z-50" style={{ background: '#0F5C4A', borderBottom: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 4px 20px rgba(0,0,0,0.35)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-16 gap-6">
 
@@ -94,7 +94,7 @@ export function ProfilePage() {
                       className={`w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-white/5 ${
                         cat.slug === categorySlug ? 'font-semibold' : 'text-white/70'
                       }`}
-                      style={cat.slug === categorySlug ? { color: '#c8f500' } : {}}
+                      style={cat.slug === categorySlug ? { color: '#F0FAB4' } : {}}
                     >
                       {cat.name[lang]}
                     </button>
@@ -121,7 +121,7 @@ export function ProfilePage() {
                 to={`${basePath}/perfiles/${categorySlug}/${p.slug}`}
                 className="whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
                 style={p.slug === profileSlug
-                  ? { background: '#ff4d2e', color: '#fff' }
+                  ? { background: '#F0FAB4', color: '#0F5C4A' }
                   : { color: 'rgba(255,255,255,0.55)' }
                 }
                 onMouseEnter={e => { if (p.slug !== profileSlug) (e.currentTarget as HTMLElement).style.color = '#fff' }}
@@ -135,7 +135,7 @@ export function ProfilePage() {
       </header>
 
       {/* ─── Hero ───────────────────────────────────────────── */}
-      <section className="text-white py-20 px-4" style={{ background: '#0f2d20' }}>
+      <section className="text-white py-20 px-4" style={{ background: '#0F5C4A' }}>
         <div className="max-w-5xl mx-auto">
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 max-w-3xl">
             {profile.heroTitle[lang]}
@@ -148,8 +148,8 @@ export function ProfilePage() {
               href="https://wa.me/34624607445"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-shimmer inline-flex items-center justify-center px-8 py-4 rounded-lg font-bold text-base text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4d2e] transition-all duration-200"
-              style={{ background: '#ff4d2e', boxShadow: '0 4px 20px rgba(255,77,46,0.38)' }}
+              className="btn-shimmer inline-flex items-center justify-center px-8 py-4 rounded-lg font-bold text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4] transition-all duration-200"
+              style={{ background: '#F0FAB4', color: '#0F5C4A', boxShadow: '0 4px 20px rgba(200,250,180,0.38)' }}
             >
               {isEN ? 'Get a quote' : 'Quiero cotizar'}
             </a>
@@ -216,7 +216,7 @@ export function ProfilePage() {
 
           {/* Right: Tasks */}
           <div>
-            <h3 className="font-display text-xl font-bold mb-6" style={{ color: '#c8f500' }}>
+            <h3 className="font-display text-xl font-bold mb-6" style={{ color: '#F0FAB4' }}>
               {isEN ? 'What are their tasks?' : '¿Cuáles son sus tareas?'}
             </h3>
             <div className="space-y-5">

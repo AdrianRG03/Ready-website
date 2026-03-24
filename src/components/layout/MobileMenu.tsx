@@ -65,17 +65,17 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
             className="fixed right-0 top-0 z-50 h-full w-72 flex flex-col"
-            style={{ background: '#080f0c', boxShadow: '-8px 0 40px rgba(0,0,0,0.6)' }}
+            style={{ background: '#042419', boxShadow: '-8px 0 40px rgba(0,0,0,0.6)' }}
             role="dialog"
             aria-modal="true"
             aria-label="Menú de navegación"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-              <span className="font-display font-bold text-xl text-white">ready</span>
+              <img src="/images/readywhite.png" alt="ready" className="h-7 w-auto" />
               <button
                 onClick={onClose}
-                className="p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4d2e] transition-colors"
+                className="p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4] transition-colors"
                 aria-label="Cerrar menú"
               >
                 <Icon name="x" size={20} />
@@ -112,8 +112,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   analytics.trackCTAClick('mobile-menu-cta-hire')
                   onClose()
                 }}
-                className="btn-shimmer w-full flex items-center justify-center px-5 py-3 rounded-lg text-sm font-bold text-white transition-all duration-200 focus-visible:outline-none"
-                style={{ background: '#ff4d2e', boxShadow: '0 2px 12px rgba(255,77,46,0.35)' }}
+                className="btn-shimmer w-full flex items-center justify-center px-5 py-3 rounded-lg text-sm font-bold transition-all duration-200 focus-visible:outline-none"
+                style={{ background: '#F0FAB4', color: '#0F5C4A', boxShadow: '0 2px 12px rgba(200,250,180,0.35)' }}
               >
                 {t('nav.ctaHire')}
               </a>
@@ -127,8 +127,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   analytics.trackCTAClick('mobile-menu-cta-apply')
                   onClose()
                 }}
-                className="btn-shimmer w-full flex items-center justify-center px-5 py-3 rounded-lg text-sm font-bold text-white transition-all duration-200 focus-visible:outline-none"
-                style={{ background: 'rgba(255,77,46,0.15)', border: '1px solid rgba(255,77,46,0.4)', color: '#ff7a5e' }}
+                className="btn-shimmer w-full flex items-center justify-center px-5 py-3 rounded-lg text-sm font-bold transition-all duration-200 focus-visible:outline-none"
+                style={{ background: 'rgba(200,250,180,0.12)', border: '1px solid rgba(200,250,180,0.4)', color: '#F0FAB4' }}
               >
                 {t('nav.ctaApply')}
               </a>
