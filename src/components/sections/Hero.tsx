@@ -38,7 +38,6 @@ const PROFILES = [
     company: 'Microsoft',
     companyColor: '#737373',
     logo: '/images/microsoft.webp',
-    logoHeight: '28px',
   },
   {
     name: 'Adriana Sánchez',
@@ -66,8 +65,8 @@ function HeroProfile() {
   return (
     // Contenedor derecho: replica xl:absolute md:top-[200px] xl:right-44 max-w-lg md:h-[460px]
     <div
-      className="absolute hidden md:block"
-      style={{ top: '200px', right: '430px', width: '512px', height: '460px', zIndex: 15 }}
+      className="absolute hidden xl:block"
+      style={{ top: '200px', right: 'clamp(100px, calc(50% - 450px), 430px)', width: '512px', height: '460px', zIndex: 15 }}
     >
       <div className="relative w-full h-full">
 
@@ -83,7 +82,7 @@ function HeroProfile() {
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             style={{
               position: 'absolute',
-              left: '128px',
+              left: '90px',
               top: 0,
               height: '400px',
               width: 'auto',
@@ -94,7 +93,7 @@ function HeroProfile() {
         </AnimatePresence>
 
         {/* Tarjeta: replica absolute md:top-52 md:-left-28 */}
-        <div style={{ position: 'absolute', top: '208px', left: '-62px', zIndex: 20 }}>
+        <div style={{ position: 'absolute', top: '266px', left: '-85px', zIndex: 20 }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={`card-${index}`}
@@ -102,16 +101,16 @@ function HeroProfile() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="bg-white rounded-lg p-3"
-              style={{ width: '290px', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }}
+              className="bg-white rounded-lg"
+              style={{ width: '290px', padding: '10px 12px', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }}
               aria-live="polite"
             >
               {/* Nombre + Verificado + Bandera */}
-              <div className="flex items-center justify-between mb-1">
+              <div className="flex items-center justify-between" style={{ marginBottom: '4px' }}>
                 <div className="flex items-center gap-1.5 flex-wrap">
                   <span className="font-extrabold" style={{ fontSize: '18px', color: '#0F5C4A' }}>{profile.name}</span>
                   <span className="flex items-center gap-0.5" style={{ fontSize: '16px', color: '#0996EE' }}>
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#0996EE">
+                    <svg width="11" height="12" viewBox="0 0 24 24" fill="#0996EE">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                     </svg>
                     Verificado
@@ -121,18 +120,18 @@ function HeroProfile() {
                   src={`https://flagcdn.com/${profile.flag}.svg`}
                   alt={profile.flag}
                   className="rounded-sm shrink-0"
-                  style={{ width: '30px', height: '20px', objectFit: 'cover' }}
+                  style={{ width: '24px', height: '25px', objectFit: 'cover' }}
                 />
               </div>
 
               {/* Rol */}
-              <p className="mb-3" style={{ fontSize: '16px', color: '#2B2B2B' }}>{profile.role}</p>
+              <p style={{ fontSize: '16px', color: '#2B2B2B', marginBottom: '8px' }}>{profile.role}</p>
 
               {/* Trabajó para */}
               <div className="flex items-center gap-2">
                 <span style={{ fontSize: '14px', color: '#9ca3af' }}>Trabajó para:</span>
                 {profile.logo ? (
-                  <img src={profile.logo} alt={profile.company} style={{ height: (profile as any).logoHeight ?? '40px', width: 'auto' }} />
+                  <img src={profile.logo} alt={profile.company} style={{ height: (profile as any).logoHeight ?? '28px', width: 'auto', maxWidth: '120px' }} />
                 ) : (
                   <span className="font-bold" style={{ fontSize: '14px', color: profile.companyColor }}>
                     {profile.company}
@@ -159,17 +158,10 @@ export function Hero() {
     <section
       id="inicio"
       aria-label="Sección hero"
-      className="relative flex items-center overflow-hidden"
-      style={{
-        minHeight: '590px',
-        backgroundColor: '#0F5C4A',
-        backgroundImage: "url('/images/hero.svg')",
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: 'right center',
-      }}
+      className="relative flex items-start xl:items-center overflow-hidden xl:bg-[url('/images/hero.svg')] bg-no-repeat bg-cover bg-[right_center] min-h-[480px] xl:min-h-[590px]"
+      style={{ backgroundColor: '#0F5C4A' }}
     >
-      <Container className="relative z-10 pt-8 pb-20 lg:pt-32 lg:pb-28">
+      <Container className="relative z-10 pt-[128px] pb-12 xl:pt-32 xl:pb-28">
         <motion.div
           variants={containerVariants}
           initial="hidden"

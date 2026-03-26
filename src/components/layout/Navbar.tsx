@@ -65,7 +65,7 @@ export function Navbar() {
             </a>
 
             {/* Desktop nav links */}
-            <ul className="hidden md:flex items-center gap-8" role="list">
+            <ul className="hidden lg:flex items-center gap-8" role="list">
               {NAV_LINKS.map(link => (
                 <li key={link.href}>
                   <a
@@ -80,7 +80,7 @@ export function Navbar() {
             </ul>
 
             {/* Right actions */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-1">
               {/* Quiero Cotizar */}
               <a
                 href="https://wa.me/34624607445"
@@ -114,7 +114,7 @@ export function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4]"
+              className="lg:hidden p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4]"
               onClick={() => setIsMobileOpen(true)}
               aria-label="Abrir menú de navegación"
               aria-expanded={isMobileOpen}

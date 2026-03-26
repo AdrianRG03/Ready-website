@@ -110,7 +110,7 @@ export function Network() {
 
         {/* Mobile carousel — 3 cards */}
         <motion.div
-          className="flex xl:hidden justify-center items-center mt-5 gap-4 overflow-x-auto pb-2"
+          className="flex xl:hidden justify-center items-center mt-5 gap-4 overflow-x-auto pb-2 no-scrollbar"
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}

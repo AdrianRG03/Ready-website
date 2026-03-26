@@ -87,8 +87,8 @@ export function About() {
 
             {/* Video — 300×320px exacto como el oficial */}
             <motion.div
-              className="relative xl:mt-0 mt-8 xl:mb-0 mb-2 flex flex-col items-center shrink-0"
-              style={{ width: '300px' }}
+              className="relative xl:mt-0 mt-8 xl:mb-0 mb-2 flex flex-col items-center shrink-0 w-full xl:w-auto"
+              style={{ maxWidth: '300px' }}
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
               variants={fadeUp}
@@ -97,7 +97,8 @@ export function About() {
               <div className="w-full overflow-hidden flex justify-center">
                 <video
                   controls
-                  style={{ width: '300px', height: '320px', borderRadius: '6px', background: '#000' }}
+                  className="w-full"
+                  style={{ maxWidth: '300px', height: '320px', borderRadius: '6px', background: '#000' }}
                   aria-label="Clientes Ready"
                 />
               </div>

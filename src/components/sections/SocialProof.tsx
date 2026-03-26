@@ -58,7 +58,7 @@ export function SocialProof() {
         aria-label="Clientes"
         style={{ background: '#dcdcdc', height: '64px', overflow: 'hidden' }}
       >
-        <div className="flex items-center h-full" style={{ paddingLeft: '160px' }}>
+        <div className="flex items-center h-full pl-3 md:pl-10 2xl:pl-40">
           {/* Label fijo */}
           <h6
             className="min-w-fit font-bold shrink-0 mr-3"
@@ -79,7 +79,7 @@ export function SocialProof() {
             <motion.div
               className="flex"
               animate={{ x: [0, -2427] }}
-              transition={{ duration: 30, repeat: Infinity, repeatType: 'loop', ease: 'linear' }}
+              transition={{ duration: 24, repeat: Infinity, repeatType: 'loop', ease: 'linear' }}
               style={{ willChange: 'transform' }}
             >
               <img src="/images/clients.webp" alt="" aria-hidden="true"
@@ -117,8 +117,8 @@ export function SocialProof() {
             {TESTIMONIALS.map((item, i) => (
               <motion.div
                 key={item.nameKey}
-                className="bg-white rounded-md overflow-hidden"
-                style={{ width: '384px', minWidth: '384px', maxWidth: '384px', height: '530px' }}
+                className="bg-white rounded-md overflow-hidden w-full"
+                style={{ maxWidth: '384px', height: '530px' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.55, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}

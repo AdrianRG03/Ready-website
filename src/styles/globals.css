@@ -243,6 +243,10 @@
 @layer utilities {
   .text-balance { text-wrap: balance; }
 
+  /* ── Hide scrollbar (keep scroll functional) ── */
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
   /* ── Dot grid (hero/dark bg) ── */
   .dot-grid {
     background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);

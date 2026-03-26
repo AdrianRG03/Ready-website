@@ -10,17 +10,15 @@ const STEPS = [
   { key: 'go',    titleKey: 'proceso.goTitle',     descKey: 'proceso.goDesc'    },
 ]
 
-/* ── Círculo bullseye — réplica del point.svg oficial ── */
+/* ── Círculo sólido con punto interior — réplica del point.svg oficial ── */
 function PointCircle() {
   return (
     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-      {/* Anillo exterior */}
-      <circle cx="22" cy="22" r="21" stroke="#F0FAB4" strokeWidth="1" strokeOpacity="0.35"/>
-      {/* Anillo medio */}
-      <circle cx="22" cy="22" r="14" stroke="#F0FAB4" strokeWidth="1" strokeOpacity="0.5"/>
-      {/* Fondo del núcleo */}
-      <circle cx="22" cy="22" r="10" fill="#F0FAB4" fillOpacity="0.12" stroke="#F0FAB4" strokeWidth="1.5" strokeOpacity="0.7"/>
-      {/* Dot central */}
+      {/* Halo exterior translúcido */}
+      <circle cx="22" cy="22" r="21" fill="#F0FAB4" fillOpacity="0.1"/>
+      {/* Círculo sólido relleno */}
+      <circle cx="22" cy="22" r="13" fill="#F0FAB4" fillOpacity="0.35"/>
+      {/* Dot central sólido */}
       <circle cx="22" cy="22" r="5" fill="#F0FAB4"/>
     </svg>
   )
@@ -69,10 +67,23 @@ export function Benefits() {
           {/* ── Wrapper: círculos + steps ── */}
           <div className="flex flex-col items-center md:mt-20 mt-10">
 
-            {/* ── Fila de círculos + líneas (solo desktop) ── */}
-            <div className="hidden md:flex items-center">
+            {/* ── Desktop: fila 1 — círculos centrados sobre cada título ── */}
+            <div className="hidden md:grid w-full relative" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+              {/* Línea punteada que conecta los círculos */}
+              <motion.div
+                className="absolute top-1/2 -translate-y-1/2"
+                style={{
+                  left: 'calc(100% / 6)',
+                  right: 'calc(100% / 6)',
+                  height: '1px',
+                  borderTop: '1px dashed rgba(229,229,229,0.5)',
+                }}
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
+                transition={{ delay: 0.5, duration: 0.6 }}
+              />
               {STEPS.map((step, i) => (
-                <Fragment key={step.key}>
+                <div key={step.key} className="flex justify-center relative z-10">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.6 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -80,28 +91,12 @@ export function Benefits() {
                   >
                     <PointCircle />
                   </motion.div>
-                  {/* Línea punteada entre círculos */}
-                  {i < STEPS.length - 1 && (
-                    <motion.hr
-                      className="border-dashed"
-                      style={{
-                        width: '384px',
-                        borderColor: 'rgba(229,229,229,0.5)',
-                        borderTopWidth: '1px',
-                        borderStyle: 'dashed',
-                        flexShrink: 0,
-                      }}
-                      initial={{ opacity: 0 }}
-                      animate={isInView ? { opacity: 1 } : {}}
-                      transition={{ delay: 0.5 + i * 0.2, duration: 0.6 }}
-                    />
-                  )}
-                </Fragment>
+                </div>
               ))}
             </div>
 
-            {/* ── Fila de títulos + descripciones ── */}
-            <div className="flex items-start flex-col md:flex-row md:space-x-20 md:space-y-0 space-y-8 mt-6 md:mt-8">
+            {/* ── Desktop: fila 2 — títulos + descripciones ── */}
+            <div className="hidden md:grid w-full mt-8" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
               {STEPS.map((step, i) => (
                 <motion.div
                   key={step.key}
@@ -109,8 +104,7 @@ export function Benefits() {
                   variants={fadeUp}
                   initial="hidden"
                   animate={isInView ? 'visible' : 'hidden'}
-                  className="text-center"
-                  style={{ maxWidth: '384px' }}
+                  className="text-center px-6"
                 >
                   <h5
                     className="font-display font-extrabold text-white"

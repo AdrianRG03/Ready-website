@@ -97,7 +97,7 @@ export function HowItWorks() {
           </motion.div>
 
           {/* ── Cards row ── */}
-          <div className="flex md:flex-row flex-col gap-3 mt-5">
+          <div className="flex md:flex-row flex-col gap-5 mt-5">
             {SERVICES.map((service, i) => (
               <motion.div
                 key={service.key}
@@ -110,7 +110,7 @@ export function HowItWorks() {
                   backgroundColor: '#0C4437',
                   borderRadius: '6px',
                   padding: '16px 16px 0px',
-                  height: '212px',
+                  minHeight: '212px',
                   overflow: 'visible',
                   minWidth: 0,
                 }}
@@ -125,7 +125,7 @@ export function HowItWorks() {
                   <div className="flex flex-col justify-between">
                     {/* max-w-96 md:mr-24 mr-32 — igual que oficial */}
                     <p
-                      className="max-w-96 md:mr-8 mr-16"
+                      className="max-w-96 mr-24"
                       style={{ fontSize: '16px', fontWeight: 400, color: 'white', lineHeight: 1.45 }}
                     >
                       {t(service.descKey)}
