@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { Container } from '@/components/ui'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 const TESTIMONIALS = [
