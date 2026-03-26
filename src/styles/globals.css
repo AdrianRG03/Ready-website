@@ -1,3 +1,91 @@
+/* ─────────────────────────────────────────
+   WULKAN DISPLAY — archivos con licencia oficial
+───────────────────────────────────────── */
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display Light Italic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display Regular Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display Medium Italic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display SemiBold Italic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display Bold Italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Wulkan display';
+  src: url('/fonts/Wulkan Display Black Italic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,6 +118,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px; /* fixed navbar height (81px) + 9px breathing room */
     -webkit-text-size-adjust: 100%;
   }
 
@@ -42,8 +131,13 @@
     background-color: #fafaf7;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+  h1, h2, h3, h4 {
+    font-family: 'Wulkan display', 'Playfair Display', Georgia, serif !important;
+    letter-spacing: normal;
+  }
+
+  /* h5/h6 heredan el font del body (sans-serif) — preparado para Proxima Nova */
+  h5, h6 {
     letter-spacing: normal;
   }
 

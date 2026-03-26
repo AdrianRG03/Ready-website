@@ -67,6 +67,9 @@ export function Home() {
       {/* 3. Nuestro Proceso (Ready → Set → Go!) */}
       <Benefits />
 
+      {/* Separador blanco entre Proceso y Perfiles — igual que oficial (40px) */}
+      <div style={{ height: '40px', background: '#ffffff' }} aria-hidden="true" />
+
       {/* 4. Perfiles (5 categorías) */}
       <Profiles />
 

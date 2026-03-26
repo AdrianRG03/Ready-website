@@ -16,8 +16,8 @@ export function Container({
   return (
     <Tag
       className={cn(
-        'mx-auto w-full px-6 sm:px-10 lg:px-16',
-        narrow ? 'max-w-3xl' : 'max-w-[1440px]',
+        'mx-auto w-full px-3 md:px-10 2xl:px-40',
+        narrow ? 'max-w-3xl' : '',
         className
       )}
       {...props}

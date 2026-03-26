@@ -72,7 +72,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-              <img src="/images/readywhite.png" alt="ready" className="h-7 w-auto" />
+              <img src="/images/logoblanco.svg" alt="ready" className="h-7 w-auto" />
               <button
                 onClick={onClose}
                 className="p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4] transition-colors"

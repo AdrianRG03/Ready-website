@@ -4,6 +4,9 @@ import { HelmetProvider } from 'react-helmet-async'
 import { Layout } from '@/components/layout/Layout'
 import { Home } from '@/pages/Home'
 import { ProfilePage } from '@/pages/ProfilePage'
+import { CookiesPage } from '@/pages/CookiesPage'
+import { TerminosPage } from '@/pages/TerminosPage'
+import { AvisoLegalPage } from '@/pages/AvisoLegalPage'
 import { ScrollToTop } from '@/components/ScrollToTop'
 import '@/i18n/config'
 
@@ -37,6 +40,10 @@ export default function App() {
                     <Route path="/" element={<Home />} />
                     {/* EN locale */}
                     <Route path="/en/*" element={<Home />} />
+                    {/* Legal pages */}
+                    <Route path="/configuracion-de-cookies" element={<CookiesPage />} />
+                    <Route path="/terminos-y-condiciones" element={<TerminosPage />} />
+                    <Route path="/politica-de-privacidad" element={<AvisoLegalPage />} />
                     {/* Catch-all → home */}
                     <Route path="*" element={<Home />} />
                   </Routes>

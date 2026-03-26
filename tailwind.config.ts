@@ -36,7 +36,7 @@ export default {
       },
       fontFamily: {
         sans:    ['"Nunito Sans"', 'system-ui', 'sans-serif'],
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        display: ['"Wulkan display"', '"Playfair Display"', 'Georgia', 'serif'],
       },
       animation: {
         'fade-in-up':  'fadeInUp 0.65s cubic-bezier(0.22,1,0.36,1) forwards',

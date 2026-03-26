@@ -46,20 +46,21 @@ export function Navbar() {
       >
         <Container>
           <nav
-            className="flex items-center justify-between h-18 lg:h-22"
-            style={{ height: scrolled ? '68px' : '80px', transition: 'height 0.3s ease' }}
+            className="flex items-center justify-between"
+            style={{ height: scrolled ? '80px' : '116px', transition: 'height 0.3s ease' }}
             aria-label="Navegación principal"
           >
             {/* Logo */}
             <a
               href="/"
-              className="hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4] rounded"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4] rounded"
               aria-label="ready — Ir al inicio"
             >
               <img
-                src="/images/readywhite.png"
+                src="/images/logoblanco.svg"
                 alt="ready"
-                className="h-8 w-auto"
+                className="w-auto"
+                style={{ height: '46px' }}
               />
             </a>
 
@@ -70,7 +71,7 @@ export function Navbar() {
                   <a
                     href={link.href}
                     onClick={e => handleNavClick(e, link.href)}
-                    className="link-underline text-sm font-medium text-white/85 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4] rounded px-1"
+                    className="link-underline text-base font-normal text-white/85 hover:text-[#F0FAB4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4] rounded px-1"
                   >
                     {t(link.label)}
                   </a>
@@ -79,21 +80,21 @@ export function Navbar() {
             </ul>
 
             {/* Right actions */}
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-1">
               {/* Quiero Cotizar */}
               <a
                 href="https://wa.me/34624607445"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => analytics.trackCTAClick('navbar-cta-hire')}
-                className="btn-shimmer px-5 py-2 rounded-lg text-sm font-bold transition-all duration-200 focus-visible:outline-none"
-                style={{ background: '#F0FAB4', color: '#0F5C4A', boxShadow: '0 2px 12px rgba(200,250,180,0.35)' }}
+                className="btn-shimmer inline-flex items-center px-4 py-0 rounded-[6px] text-[18px] font-semibold transition-all duration-200 focus-visible:outline-none hover:brightness-95"
+                style={{ background: '#F0FAB4', color: '#0F5C4A', height: '48px', boxShadow: '0 2px 12px rgba(200,250,180,0.25)' }}
               >
                 {t('nav.ctaHire')}
               </a>
 
               {/* Separator */}
-              <span className="text-white/20 select-none" aria-hidden="true">|</span>
+              <hr className="border border-white w-9 rotate-90" aria-hidden="true" />
 
               {/* Quiero postular */}
               <a
@@ -101,14 +102,14 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => analytics.trackCTAClick('navbar-cta-apply')}
-                className="btn-shimmer px-5 py-2 rounded-lg text-sm font-bold transition-all duration-200 focus-visible:outline-none border border-[#F0FAB4] hover:bg-[#F0FAB4] hover:text-[#0F5C4A]"
-                style={{ color: '#F0FAB4' }}
+                className="btn-shimmer inline-flex items-center px-4 py-0 rounded-[6px] text-[18px] font-semibold transition-all duration-200 focus-visible:outline-none hover:brightness-95"
+                style={{ background: '#F0FAB4', color: '#0F5C4A', height: '48px', boxShadow: '0 2px 12px rgba(200,250,180,0.25)' }}
               >
                 {t('nav.ctaApply')}
               </a>
 
               {/* Language switcher */}
-              <LanguageSwitcher />
+              <LanguageSwitcher className="ml-4" />
             </div>
 
             {/* Mobile hamburger */}

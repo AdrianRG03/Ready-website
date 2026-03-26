@@ -3,46 +3,44 @@ import { useTranslation } from 'react-i18next'
 import { Container } from '@/components/ui'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
-/* ── Logos placeholder (reemplazar con <img> cuando tengas los logos reales) ── */
-const CLIENT_LOGOS = [
-  'Falabella', 'BCI', 'Entel', 'Copec', 'Scotiabank',
-  'Cencosud', 'Latam', 'Ripley', 'CMR', 'WOM',
-]
-
 const TESTIMONIALS = [
   {
-    quoteKey: 'testimonios.t1Quote',
-    nameKey:  'testimonios.t1Name',
-    roleKey:  'testimonios.t1Role',
-    photo:    '/images/Laz.jpg',
-    initials: 'LM',
+    quoteKey:    'testimonios.t1Quote',
+    nameKey:     'testimonios.t1Name',
+    roleKey:     'testimonios.t1Role',
+    photo:       '/images/lazaro.png',
+    companyLogo: '/images/zurich-santander.webp',
+    companyAlt:  'Zurich Santander',
+    logoHeight:  '72px',
+    logoWidth:   '160px',
   },
   {
-    quoteKey: 'testimonios.t2Quote',
-    nameKey:  'testimonios.t2Name',
-    roleKey:  'testimonios.t2Role',
-    photo:    '/images/nicole.png',
-    initials: 'NO',
+    quoteKey:    'testimonios.t2Quote',
+    nameKey:     'testimonios.t2Name',
+    roleKey:     'testimonios.t2Role',
+    photo:       '/images/nicole-opazo.png',
+    companyLogo: '/images/lipigas.webp',
+    companyAlt:  'Lipigas',
+    logoHeight:  '64px',
   },
   {
-    quoteKey: 'testimonios.t3Quote',
-    nameKey:  'testimonios.t3Name',
-    roleKey:  'testimonios.t3Role',
-    photo:    '/images/jorge.png',
-    initials: 'JP',
+    quoteKey:    'testimonios.t3Quote',
+    nameKey:     'testimonios.t3Name',
+    roleKey:     'testimonios.t3Role',
+    photo:       '/images/jorge-pacheco.png',
+    companyLogo: '/images/compas-group.webp',
+    companyAlt:  'Compas Group',
+    logoHeight:  '40px',
   },
 ]
 
-/* ── Estrellas ────────────────────────────────────────── */
-function Stars() {
+/* ── Comillas decorativas (SVG oficial) ───────────────── */
+function QuoteIcon() {
   return (
-    <div className="flex gap-0.5" aria-label="5 estrellas">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#D4A017">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-        </svg>
-      ))}
-    </div>
+    <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M3.82824 12.2599C2.97752 12.2599 2.25677 12.059 1.666 11.6573C1.09885 11.2556 0.673487 10.7239 0.389914 10.0622C0.129971 9.40054 0 8.69161 0 7.93541C0 6.84838 0.224496 5.82043 0.673487 4.85155C1.14611 3.88267 1.7487 3.03195 2.48127 2.29939C3.23747 1.54319 4.05274 0.96423 4.92709 0.5625L7.37291 2.37028C6.73487 2.65386 6.13228 2.99651 5.56513 3.39824C4.99798 3.77633 4.50173 4.20169 4.07637 4.67432C3.67464 5.14694 3.36744 5.63138 3.15476 6.12763L3.33199 6.23397C3.47378 6.13945 3.62738 6.06855 3.7928 6.02129C3.98185 5.97403 4.22997 5.9504 4.53718 5.9504C4.96254 5.9504 5.3879 6.05674 5.81326 6.26942C6.26225 6.4821 6.62853 6.80112 6.91211 7.22648C7.21931 7.65184 7.37291 8.19536 7.37291 8.85703C7.37291 9.58959 7.2075 10.2158 6.87666 10.7357C6.54582 11.232 6.10865 11.6101 5.56513 11.87C5.02162 12.1299 4.44265 12.2599 3.82824 12.2599Z" fill="#15453B" />
+      <path d="M14.4553 12.2599C13.6046 12.2599 12.8839 12.059 12.2931 11.6573C11.7259 11.2556 11.3006 10.7239 11.017 10.0622C10.7571 9.40054 10.6271 8.69161 10.6271 7.93541C10.6271 6.84838 10.8516 5.82043 11.3006 4.85155C11.7732 3.88267 12.3758 3.03195 13.1084 2.29939C13.8646 1.54319 14.6798 0.96423 15.5542 0.5625L18 2.37028C17.362 2.65386 16.7594 2.99651 16.1922 3.39824C15.6251 3.77633 15.1288 4.20169 14.7035 4.67432C14.3017 5.14694 13.9945 5.63138 13.7818 6.12763L13.9591 6.23397C14.1009 6.13945 14.2545 6.06855 14.4199 6.02129C14.6089 5.97403 14.8571 5.9504 15.1643 5.9504C15.5896 5.9504 16.015 6.05674 16.4403 6.26942C16.8893 6.4821 17.2556 6.80112 17.5392 7.22648C17.8464 7.65184 18 8.19536 18 8.85703C18 9.58959 17.8346 10.2158 17.5037 10.7357C17.1729 11.232 16.7357 11.6101 16.1922 11.87C15.6487 12.1299 15.0697 12.2599 14.4553 12.2599Z" fill="#15453B" />
+    </svg>
   )
 }
 
@@ -51,9 +49,6 @@ export function SocialProof() {
   const { t } = useTranslation()
   const { ref, isInView } = useScrollAnimation()
 
-  /* duplicamos los logos para el efecto marquee infinito */
-  const loopLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS]
-
   return (
     <>
       {/* ══════════════════════════════════════════════════
@@ -61,76 +56,40 @@ export function SocialProof() {
       ══════════════════════════════════════════════════ */}
       <section
         id="clientes"
-        aria-labelledby="clientes-heading"
-        className="relative py-20 overflow-hidden"
-        style={{ background: '#fafaf7' }}
+        aria-label="Clientes"
+        style={{ background: '#dcdcdc', height: '64px', overflow: 'hidden' }}
       >
-        {/* Línea decorativa top */}
-        <div
-          className="absolute top-0 left-0 right-0 h-px"
-          style={{ background: 'linear-gradient(to right, transparent, rgba(200,250,180,0.22), transparent)' }}
-        />
-
-        <Container>
-          {/* Header */}
-          <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: 'rgba(28,36,25,0.4)' }}>
-              {t('clientes.title')}
-            </p>
-            <h2
-              id="clientes-heading"
-              className="font-display text-2xl sm:text-3xl font-bold"
-              style={{ color: '#1c2419' }}
-            >
-              {t('clientes.heading')}{' '}
-              <span style={{ color: '#F0FAB4' }}>Ready</span>
-            </h2>
-          </div>
-        </Container>
-
-        {/* Marquee de logos — ancho completo */}
-        <div className="relative overflow-hidden">
-          {/* Fade lateral izquierdo */}
-          <div
-            className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to right, #fafaf7, transparent)' }}
-          />
-          {/* Fade lateral derecho */}
-          <div
-            className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to left, #fafaf7, transparent)' }}
-          />
-
-          <motion.div
-            className="flex gap-6 w-max"
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
+        <div className="flex items-center h-full" style={{ paddingLeft: '160px' }}>
+          {/* Label fijo */}
+          <h6
+            className="min-w-fit font-bold shrink-0 mr-3"
+            style={{ fontSize: '16px', color: '#0F5C4A' }}
           >
-            {loopLogos.map((name, i) => (
-              <div
-                key={`${name}-${i}`}
-                className="flex items-center justify-center h-14 px-8 rounded-xl shrink-0 transition-all duration-300"
-                style={{
-                  background: '#fff',
-                  border: '1px solid rgba(0,0,0,0.08)',
-                  minWidth: '140px',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                }}
-                aria-label={name}
-              >
-                <span className="font-bold text-sm tracking-wide select-none" style={{ color: 'rgba(28,36,25,0.4)' }}>
-                  {name}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
+            {t('clientes.title')}
+          </h6>
 
-        {/* Línea decorativa bottom */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-px"
-          style={{ background: 'linear-gradient(to right, transparent, rgba(0,0,0,0.06), transparent)' }}
-        />
+          {/* Marquee con degradados laterales */}
+          <div className="relative overflow-hidden flex-1 h-full flex items-center">
+            {/* Degradado izquierdo */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none"
+              style={{ background: 'linear-gradient(to right, #dcdcdc, transparent)' }} />
+            {/* Degradado derecho */}
+            <div className="absolute right-0 top-0 bottom-0 w-64 z-10 pointer-events-none"
+              style={{ background: 'linear-gradient(to left, #dcdcdc 50%, transparent)' }} />
+
+            <motion.div
+              className="flex"
+              animate={{ x: [0, -2427] }}
+              transition={{ duration: 30, repeat: Infinity, repeatType: 'loop', ease: 'linear' }}
+              style={{ willChange: 'transform' }}
+            >
+              <img src="/images/clients.webp" alt="" aria-hidden="true"
+                style={{ height: '64px', width: '2427px', display: 'block', flexShrink: 0 }} />
+              <img src="/images/clients.webp" alt="Clientes Ready"
+                style={{ height: '64px', width: '2427px', display: 'block', flexShrink: 0 }} />
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
@@ -138,149 +97,103 @@ export function SocialProof() {
       ══════════════════════════════════════════════════ */}
       <section
         aria-labelledby="testimonios-heading"
-        className="relative py-28 overflow-hidden"
-        style={{ background: '#F3F4F6' }}
+        style={{ background: '#F3F4F6', paddingTop: '40px', paddingBottom: '16px' }}
       >
-        {/* Glow decorativo sutil */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] blur-[100px] pointer-events-none"
-          style={{ background: 'rgba(15,92,74,0.04)' }}
-          aria-hidden="true"
-        />
+        <div ref={ref} className="px-3 md:px-10 2xl:px-40">
 
-        <Container className="relative z-10">
-          <div ref={ref}>
+          {/* Título */}
+          <motion.h2
+            id="testimonios-heading"
+            className="text-center font-extrabold"
+            style={{ fontSize: '30px', color: '#0F5C4A' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {t('testimonios.title')}
+          </motion.h2>
 
-            {/* Header */}
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 28 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <span
-                className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
-                style={{ background: 'rgba(15,92,74,0.08)', color: '#0F5C4A', border: '1px solid rgba(15,92,74,0.2)' }}
+          {/* Tarjetas */}
+          <div className="flex flex-col xl:flex-row 2xl:gap-28 lg:gap-5 gap-10 justify-center items-center mt-10">
+            {TESTIMONIALS.map((item, i) => (
+              <motion.div
+                key={item.nameKey}
+                className="bg-white rounded-md overflow-hidden"
+                style={{ width: '384px', minWidth: '384px', maxWidth: '384px', height: '530px' }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.55, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               >
-                {t('testimonios.badge')}
-              </span>
-              <h2
-                id="testimonios-heading"
-                className="font-display text-3xl sm:text-4xl font-bold"
-                style={{ color: '#1c2419' }}
-              >
-                {t('testimonios.title')}
-              </h2>
-            </motion.div>
+                {/* Foto */}
+                <img
+                  src={item.photo}
+                  alt={t(item.nameKey)}
+                  className="w-full"
+                  style={{ maxHeight: '254px', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                />
 
-            {/* Grid de tarjetas */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {TESTIMONIALS.map((item, i) => (
-                <motion.blockquote
-                  key={item.nameKey}
-                  className="relative flex flex-col rounded-2xl overflow-hidden"
-                  style={{
-                    background: '#FFFFFF',
-                    border: '1px solid rgba(0,0,0,0.07)',
-                    boxShadow: '0 4px 16px rgba(0,0,0,0.07)',
-                  }}
-                  initial={{ opacity: 0, y: 36 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                  whileHover={{ y: -5, boxShadow: '0 12px 36px rgba(0,0,0,0.12)', borderColor: 'rgba(15,92,74,0.2)' }}
-                >
-                  {/* Foto grande arriba */}
-                  <div className="relative w-full h-72 overflow-hidden" style={{ background: '#e8eae8' }}>
+                {/* Contenido */}
+                <div className="space-y-1 p-2">
+                  <QuoteIcon />
+
+                  {/* Cita */}
+                  <div
+                    className="h-40 max-h-96 overflow-hidden"
+                    style={{ fontSize: '16px', color: '#2B2B2B', lineHeight: '24px' }}
+                  >
+                    &ldquo;{t(item.quoteKey)}&rdquo;
+                  </div>
+
+                  {/* Separador */}
+                  <hr style={{ borderColor: '#F3F3F3', borderTopWidth: '1px', margin: '0' }} />
+
+                  {/* Footer: nombre + rol + logo empresa */}
+                  <div className="flex justify-between items-center pt-1">
+                    <div>
+                      <h5 className="font-sans font-extrabold" style={{ fontSize: '18px', color: '#0F5C4A' }}>
+                        {t(item.nameKey)}
+                      </h5>
+                      <p style={{ fontSize: '16px', color: '#2B2B2B' }}>
+                        {t(item.roleKey)}
+                      </p>
+                    </div>
                     <img
-                      src={item.photo}
-                      alt={t(item.nameKey)}
-                      className="w-full h-full object-cover object-top"
+                      src={item.companyLogo}
+                      alt={item.companyAlt}
+                      style={{ maxHeight: item.logoHeight, maxWidth: item.logoWidth ?? '130px', objectFit: 'contain' }}
                     />
-                    {/* Gradiente sobre la foto */}
-                    <div
-                      className="absolute inset-0"
-                      style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(255,255,255,0.95) 100%)' }}
-                    />
-                    {/* Estrellas sobre la foto */}
-                    <div className="absolute bottom-3 left-5">
-                      <Stars />
-                    </div>
                   </div>
-
-                  {/* Contenido */}
-                  <div className="p-6 flex flex-col flex-1">
-                    {/* Comilla decorativa */}
-                    <div
-                      className="absolute top-72 right-5 font-serif leading-none select-none pointer-events-none"
-                      style={{ fontSize: '56px', color: 'rgba(15,92,74,0.1)', lineHeight: 1 }}
-                      aria-hidden="true"
-                    >
-                      &ldquo;
-                    </div>
-
-                    {/* Cita */}
-                    <p className="text-sm leading-relaxed flex-1 relative z-10 mb-5" style={{ color: 'rgba(28,36,25,0.7)' }}>
-                      {t(item.quoteKey)}
-                    </p>
-
-                    {/* Footer */}
-                    <footer className="flex items-center justify-between">
-                      <cite className="not-italic">
-                        <span className="font-bold text-sm block" style={{ color: '#1c2419' }}>
-                          {t(item.nameKey)}
-                        </span>
-                        <span className="text-xs" style={{ color: 'rgba(28,36,25,0.5)' }}>
-                          {t(item.roleKey)}
-                        </span>
-                      </cite>
-
-                      {/* Badge "Verificado" */}
-                      <div
-                        className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold"
-                        style={{
-                          background: 'rgba(15,92,74,0.08)',
-                          color: '#0F5C4A',
-                          border: '1px solid rgba(15,92,74,0.2)',
-                        }}
-                      >
-                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        {t('testimonios.verified')}
-                      </div>
-                    </footer>
-                  </div>
-                </motion.blockquote>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <motion.div
-              className="text-center mt-14"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.55 }}
-            >
-              <a
-                href="#"
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-[6px] font-semibold text-sm transition-all duration-200 hover:scale-105 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4]"
-                style={{
-                  background: '#F0FAB4',
-                  color: '#0F5C4A',
-                  boxShadow: '0 4px 20px rgba(200,250,180,0.38)',
-                }}
-              >
-                {t('testimonios.cta')}
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </motion.div>
-
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </Container>
+
+          {/* CTA */}
+          <motion.div
+            className="flex justify-center mt-10"
+            initial={{ opacity: 0, y: 16 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <a
+              href="https://wa.me/34624607445"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans font-bold"
+              style={{
+                background: '#F0FAB4',
+                color: '#0F5C4A',
+                fontSize: '18px',
+                padding: '12px 32px',
+                borderRadius: '6px',
+                display: 'inline-block',
+              }}
+            >
+              {t('testimonios.cta')}
+            </a>
+          </motion.div>
+
+        </div>
       </section>
     </>
   )

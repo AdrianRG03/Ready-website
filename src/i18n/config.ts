@@ -13,6 +13,7 @@ i18n
     defaultNS: 'translation',
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
+      queryStringParams: { v: '2' },
     },
     detection: {
       // 'navigator' excluded: headless Chromium reports 'en-US', overriding the Spanish

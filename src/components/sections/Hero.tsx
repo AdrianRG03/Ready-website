@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation, Trans } from 'react-i18next'
 import { Container } from '@/components/ui'
 import { analytics } from '@/lib/analytics'
 
@@ -19,6 +20,134 @@ const itemVariants = {
   },
 }
 
+const PROFILES = [
+  {
+    name: 'Jose Montana',
+    role: 'Backend Developer Lead',
+    flag: 'mx',
+    photo: '/images/jose-montana.png',
+    company: 'Walmart',
+    companyColor: '#0071CE',
+    logo: '/images/walmart.webp',
+  },
+  {
+    name: 'Alberto Jaramillo',
+    role: 'Ingeniero DevOps Senior',
+    flag: 'ar',
+    photo: '/images/alberto-jaramillo.png',
+    company: 'Microsoft',
+    companyColor: '#737373',
+    logo: '/images/microsoft.webp',
+    logoHeight: '28px',
+  },
+  {
+    name: 'Adriana Sánchez',
+    role: 'Scrum Master Senior',
+    flag: 'pe',
+    photo: '/images/adriana-sanchez.png',
+    company: 'AT&T',
+    companyColor: '#00A8E0',
+    logo: '/images/att.webp',
+  },
+]
+
+function HeroProfile() {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex(i => (i + 1) % PROFILES.length)
+    }, 3500)
+    return () => clearInterval(timer)
+  }, [])
+
+  const profile = PROFILES[index]
+
+  return (
+    // Contenedor derecho: replica xl:absolute md:top-[200px] xl:right-44 max-w-lg md:h-[460px]
+    <div
+      className="absolute hidden md:block"
+      style={{ top: '200px', right: '430px', width: '512px', height: '460px', zIndex: 15 }}
+    >
+      <div className="relative w-full h-full">
+
+        {/* Foto grande: replica absolute xl:left-32 top-0 md:h-[400px] */}
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={`photo-${index}`}
+            src={profile.photo}
+            alt={profile.name}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            style={{
+              position: 'absolute',
+              left: '128px',
+              top: 0,
+              height: '400px',
+              width: 'auto',
+              objectFit: 'cover',
+              objectPosition: 'top center',
+            }}
+          />
+        </AnimatePresence>
+
+        {/* Tarjeta: replica absolute md:top-52 md:-left-28 */}
+        <div style={{ position: 'absolute', top: '208px', left: '-62px', zIndex: 20 }}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`card-${index}`}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              className="bg-white rounded-lg p-3"
+              style={{ width: '290px', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }}
+              aria-live="polite"
+            >
+              {/* Nombre + Verificado + Bandera */}
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="font-extrabold" style={{ fontSize: '18px', color: '#0F5C4A' }}>{profile.name}</span>
+                  <span className="flex items-center gap-0.5" style={{ fontSize: '16px', color: '#0996EE' }}>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#0996EE">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                    </svg>
+                    Verificado
+                  </span>
+                </div>
+                <img
+                  src={`https://flagcdn.com/${profile.flag}.svg`}
+                  alt={profile.flag}
+                  className="rounded-sm shrink-0"
+                  style={{ width: '30px', height: '20px', objectFit: 'cover' }}
+                />
+              </div>
+
+              {/* Rol */}
+              <p className="mb-3" style={{ fontSize: '16px', color: '#2B2B2B' }}>{profile.role}</p>
+
+              {/* Trabajó para */}
+              <div className="flex items-center gap-2">
+                <span style={{ fontSize: '14px', color: '#9ca3af' }}>Trabajó para:</span>
+                {profile.logo ? (
+                  <img src={profile.logo} alt={profile.company} style={{ height: (profile as any).logoHeight ?? '40px', width: 'auto' }} />
+                ) : (
+                  <span className="font-bold" style={{ fontSize: '14px', color: profile.companyColor }}>
+                    {profile.company}
+                  </span>
+                )}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+      </div>
+    </div>
+  )
+}
+
 export function Hero() {
   const { t } = useTranslation()
 
@@ -31,142 +160,59 @@ export function Hero() {
       id="inicio"
       aria-label="Sección hero"
       className="relative flex items-center overflow-hidden"
-      style={{ minHeight: '680px', background: '#0F5C4A' }}
+      style={{
+        minHeight: '590px',
+        backgroundColor: '#0F5C4A',
+        backgroundImage: "url('/images/hero.svg')",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'right center',
+      }}
     >
-      {/* ── Glows de fondo ── */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        {/* Glow verde — esquina inferior izquierda */}
-        <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(15,92,74,0.45) 0%, transparent 70%)' }} />
-        {/* Glow yellow — esquina superior derecha */}
-        <div className="absolute -top-16 right-0 w-[420px] h-[420px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(200,250,180,0.10) 0%, transparent 65%)' }} />
-      </div>
-
-      {/* ── Grid texture ── */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)',
-          backgroundSize: '48px 48px',
-        }}
-      />
-
-      {/* ── Imagen de fondo derecha ── */}
-      <div className="absolute inset-y-0 right-0 w-full pointer-events-none" aria-hidden="true">
-        <img
-          src="/images/hero-tech.png"
-          alt=""
-          className="absolute right-0 top-0 h-full w-auto max-w-none object-cover"
-          style={{ opacity: 0.42, minWidth: '55%' }}
-        />
-        {/* Fade izquierdo */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(to right, #0F5C4A 0%, #0F5C4A 28%, rgba(6,20,16,0.88) 42%, rgba(6,20,16,0.55) 58%, rgba(6,20,16,0.12) 78%, transparent 100%)',
-          }}
-        />
-        {/* Fade inferior */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(to top, rgba(8,15,12,0.75) 0%, transparent 35%)',
-          }}
-        />
-      </div>
-
-      <Container className="relative z-10 py-20 lg:py-28">
+      <Container className="relative z-10 pt-8 pb-20 lg:pt-32 lg:pb-28">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-2xl"
         >
-          {/* Badge */}
-          <motion.div variants={itemVariants} className="mb-6">
-            <span
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wide"
-              style={{ background: 'rgba(200,250,180,0.12)', color: '#F0FAB4', border: '1px solid rgba(200,250,180,0.30)' }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F0FAB4] animate-pulse" />
-              {t('hero.badge')}
-            </span>
-          </motion.div>
-
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="font-display font-extrabold text-white leading-[1.08] tracking-tight"
-            style={{ fontSize: 'clamp(2rem, 4.5vw, 3.25rem)' }}
+            className="font-display font-semibold text-white leading-[1.24] mb-6"
+            style={{ fontSize: 'clamp(1.75rem, 2.5vw, 2.3125rem)' }}
           >
-            {t('hero.title')}
+            <Trans i18nKey="hero.title" components={{ br: <br /> }} />
           </motion.h1>
 
-          {/* Subtitle */}
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 text-base text-white/60 leading-relaxed max-w-md font-normal"
-          >
-            {t('hero.subtitle')}
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div variants={itemVariants} className="mt-10 flex items-center gap-4 flex-wrap">
-            <a
-              href="https://wa.me/34624607445"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleCTAClick}
-              className="btn-shimmer inline-flex items-center gap-2.5 px-8 py-4 rounded-[6px] font-semibold text-base transition-all duration-200 focus-visible:outline-none group"
-              style={{ background: '#F0FAB4', color: '#0F5C4A', boxShadow: '0 4px 24px rgba(200,250,180,0.38)' }}
+          {/* Subtítulo + CTA */}
+          <div className="max-w-[550px]">
+            {/* Subtitle */}
+            <motion.p
+              variants={itemVariants}
+              className="text-base text-white leading-relaxed mb-10 font-normal"
             >
-              {t('hero.cta')}
-              <svg
-                width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"
-                className="transition-transform duration-200 group-hover:translate-x-1"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </motion.div>
+              {t('hero.subtitle')}
+            </motion.p>
 
-          {/* Stats inline */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-14 flex flex-wrap gap-8"
-          >
-            {[
-              { value: '+200', label: t('hero.stat1') },
-              { value: '+50',  label: t('hero.stat2') },
-              { value: '+12',  label: t('hero.stat3') },
-            ].map(stat => (
-              <div key={stat.value}>
-                <p className="font-display font-bold text-2xl" style={{ color: '#F0FAB4' }}>{stat.value}</p>
-                <p className="text-xs text-white/45 mt-0.5">{stat.label}</p>
-              </div>
-            ))}
-          </motion.div>
+            {/* CTA — full width */}
+            <motion.div variants={itemVariants}>
+              <a
+                href="https://wa.me/34624607445"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleCTAClick}
+                className="btn-shimmer w-full flex items-center justify-center rounded-[6px] font-semibold text-[18px] transition-all duration-200 focus-visible:outline-none"
+                style={{ background: '#F0FAB4', color: '#0F5C4A', height: '48px', boxShadow: '0 4px 24px rgba(200,250,180,0.38)' }}
+              >
+                {t('hero.cta')}
+              </a>
+            </motion.div>
+          </div>
         </motion.div>
       </Container>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 0.6 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2"
-        aria-hidden="true"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-          className="w-6 h-10 rounded-full flex items-start justify-center p-1.5"
-          style={{ border: '1.5px solid rgba(255,255,255,0.18)' }}
-        >
-          <div className="w-1 h-2.5 rounded-full" style={{ background: 'rgba(200,250,180,0.7)' }} />
-        </motion.div>
-      </motion.div>
+      {/* Foto grande + tarjeta de perfil */}
+      <HeroProfile />
     </section>
   )
 }

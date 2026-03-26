@@ -12,7 +12,7 @@
     "ctaApply": "Apply now"
   },
   "hero": {
-    "title": "Safely connect your business only with certified tech freelancers from LATAM.",
+    "title": "Safely connect your business only<br/>with certified tech freelancers from LATAM.",
     "subtitle": "Work on demand with validated IT talent paying locally for the time worked in a legal, transparent way, all in one place.",
     "cta": "Get a quote",
     "badge": "Certified Tech Talent · LATAM",
@@ -49,7 +49,7 @@
   },
   "perfiles": {
     "title": "Profiles",
-    "subtitle": "Our most in-demand profiles in Latam",
+    "subtitle": "Our most in-demand profiles in <strong>Latam</strong>",
     "explorar": "Explore",
     "cta": "Talk to an advisor",
     "iaTitle": "AI & Automation",
@@ -111,7 +111,8 @@
   },
   "network": {
     "badge": "The Network",
-    "title": "The Largest certified IT freelancer network in Latam",
+    "title": "The Largest certified IT freelancer",
+    "titleLine2": "network in Latam",
     "subtitle": "We work closely with a network of more than 25,000 certified and validated professionals, bringing together the best IT talent in Latin America.",
     "tagline": "Ready: The best digital freelancers in Latin America",
     "p1Name": "Jorge Gutierrez",

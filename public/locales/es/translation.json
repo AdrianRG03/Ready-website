@@ -12,7 +12,7 @@
     "ctaApply": "Quiero postular"
   },
   "hero": {
-    "title": "Conecta de forma segura tu negocio solo con freelancers tech certificados de LATAM.",
+    "title": "Conecta de forma segura tu negocio solo<br/>con freelancers tech certificados de LATAM.",
     "subtitle": "Trabaja on demand con talento IT validado pagando localmente por el tiempo trabajado de manera legal, transparente y todo en un mismo lugar.",
     "cta": "Quiero cotizar",
     "badge": "Talento Tech Certificado · LATAM",
@@ -49,7 +49,7 @@
   },
   "perfiles": {
     "title": "Perfiles",
-    "subtitle": "Nuestros perfiles más cotizados dentro de Latam",
+    "subtitle": "Nuestros perfiles más cotizados dentro de <strong>Latam</strong>",
     "explorar": "Explorar",
     "cta": "Habla con un asesor",
     "iaTitle": "IA & Automatización",
@@ -111,7 +111,8 @@
   },
   "network": {
     "badge": "La red",
-    "title": "La Mayor red de freelancers TI certificados en Latam",
+    "title": "La Mayor red de freelancers TI",
+    "titleLine2": "certificados en Latam",
     "subtitle": "Trabajamos estrechamente con una red de más de 25,000 profesionales certificados y validados, reuniendo al mejor talento TI de Latinoamérica.",
     "tagline": "Ready: Los mejores freelance digitales de Latinoamérica",
     "p1Name": "Jorge Gutierrez",

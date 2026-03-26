@@ -6,6 +6,7 @@ import { cn } from '@/utils/cn'
 
 interface LanguageSwitcherProps {
   className?: string
+  variant?: 'light' | 'dark'
 }
 
 const LOCALES = [
@@ -13,7 +14,7 @@ const LOCALES = [
   { code: 'en', flagCode: 'us', label: 'English' },
 ] as const
 
-export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ className, variant = 'light' }: LanguageSwitcherProps) {
   const { i18n } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
@@ -56,7 +57,12 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Selector de idioma"
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#F0FAB4] text-[#F0FAB4] text-sm font-semibold hover:bg-[#F0FAB4] hover:text-[#0F5C4A] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4]"
+        className={cn(
+          'flex items-center gap-2 px-3 h-10 w-20 rounded-lg border transition-colors focus-visible:outline-none focus-visible:ring-2',
+          variant === 'dark'
+            ? 'border-[#0F5C4A] text-[#0F5C4A] hover:bg-[#0F5C4A]/10 focus-visible:ring-[#0F5C4A]'
+            : 'border-white text-white hover:bg-white/10 focus-visible:ring-white'
+        )}
       >
         <img
           src={`https://flagcdn.com/w20/${current.flagCode}.png`}
