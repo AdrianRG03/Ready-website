@@ -50,6 +50,56 @@ const PROFILES = [
   },
 ]
 
+function HeroProfileMobile() {
+  const [index, setIndex] = useState(0)
+  useEffect(() => {
+    const timer = setInterval(() => setIndex(i => (i + 1) % PROFILES.length), 3500)
+    return () => clearInterval(timer)
+  }, [])
+  const profile = PROFILES[index]
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={`mobile-card-${index}`}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.4, ease: 'easeInOut' }}
+        className="bg-white rounded-lg overflow-hidden"
+        style={{ width: '300px', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}
+        aria-live="polite"
+      >
+        {/* Foto grande en la parte superior */}
+        <div style={{ height: '180px', overflow: 'hidden', background: '#f3f4f6' }}>
+          <img
+            src={profile.photo}
+            alt={profile.name}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+          />
+        </div>
+        {/* Info card debajo */}
+        <div style={{ padding: '10px 12px' }}>
+          <div className="flex items-center justify-between" style={{ marginBottom: '4px' }}>
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <span className="font-extrabold" style={{ fontSize: '16px', color: '#0F5C4A' }}>{profile.name}</span>
+              <span className="flex items-center gap-0.5" style={{ fontSize: '13px', color: '#0996EE' }}>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#0996EE"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                Verificado
+              </span>
+            </div>
+            <img src={`https://flagcdn.com/${profile.flag}.svg`} alt={profile.flag} className="rounded-sm shrink-0" style={{ width: '22px', height: '22px', objectFit: 'cover' }} />
+          </div>
+          <p style={{ fontSize: '14px', color: '#2B2B2B', marginBottom: '6px' }}>{profile.role}</p>
+          <div className="flex items-center gap-2">
+            <span style={{ fontSize: '13px', color: '#9ca3af' }}>Trabajó para:</span>
+            <img src={profile.logo} alt={profile.company} style={{ height: '22px', width: 'auto', maxWidth: '100px' }} />
+          </div>
+        </div>
+      </motion.div>
+    </AnimatePresence>
+  )
+}
+
 function HeroProfile() {
   const [index, setIndex] = useState(0)
 
@@ -170,18 +220,18 @@ export function Hero() {
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="font-display font-semibold text-white leading-[1.24] mb-6"
+            className="font-display font-semibold text-white leading-[1.24] mb-6 text-center xl:text-left"
             style={{ fontSize: 'clamp(1.75rem, 2.5vw, 2.3125rem)' }}
           >
             <Trans i18nKey="hero.title" components={{ br: <br /> }} />
           </motion.h1>
 
           {/* Subtítulo + CTA */}
-          <div className="max-w-[550px]">
+          <div className="max-w-[550px] xl:mx-0 mx-auto">
             {/* Subtitle */}
             <motion.p
               variants={itemVariants}
-              className="text-base text-white leading-relaxed mb-10 font-normal"
+              className="text-base text-white leading-relaxed mb-10 font-normal text-center xl:text-left"
             >
               {t('hero.subtitle')}
             </motion.p>
@@ -198,6 +248,11 @@ export function Hero() {
               >
                 {t('hero.cta')}
               </a>
+            </motion.div>
+
+            {/* Mobile profile card — solo visible en < xl */}
+            <motion.div variants={itemVariants} className="xl:hidden mt-6 flex justify-center">
+              <HeroProfileMobile />
             </motion.div>
           </div>
         </motion.div>

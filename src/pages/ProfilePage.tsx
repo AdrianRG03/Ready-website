@@ -61,12 +61,12 @@ export function ProfilePage() {
       >
         {/* White card navbar — fixed, centrada, solo lg+ */}
         <div
-          className="bg-white px-6 py-4 rounded-lg lg:flex items-center gap-6 w-full fixed hidden z-50"
+          className="bg-white px-4 py-5 rounded-lg lg:flex items-center gap-6 w-full fixed hidden z-50"
           style={{
             top: '32px',
             left: '50%',
             transform: 'translateX(-50%)',
-            maxWidth: 'min(98vw, 1585px)',
+            maxWidth: '83%',
             border: '1px solid #0F5C4A',
           }}
         >

@@ -108,37 +108,20 @@ export function Network() {
           {t('network.subtitle')}
         </motion.p>
 
-        {/* Mobile carousel — 3 cards */}
+        {/* Mobile — solo la card activa con animación */}
         <motion.div
-          className="flex xl:hidden justify-center items-center mt-5 gap-4 overflow-x-auto pb-2 no-scrollbar"
+          className="flex xl:hidden justify-center mt-5"
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {FREELANCERS.map((f) => (
-            <div
-              key={f.name}
-              className="flex items-center gap-3 border bg-white p-4 rounded-lg"
-              style={{ width: '244px', minWidth: '244px' }}
-            >
-              <img
-                src={f.photo}
-                alt={f.name}
-                style={{ width: '44px', height: '44px', borderRadius: '50%', objectFit: 'cover', objectPosition: 'top', flexShrink: 0 }}
-              />
-              <div className="flex-1 min-w-0">
-                <div className="flex justify-between items-center gap-1">
-                  <h5 className="font-sans font-extrabold truncate" style={{ fontSize: '14px', color: '#2B2B2B' }}>
-                    {f.name}
-                  </h5>
-                  <div className="overflow-hidden flex justify-center items-center rounded-full shrink-0" style={{ width: '24px', height: '24px' }}>
-                    <img src={`https://flagcdn.com/w40/${f.flagCode}.png`} alt="Country" style={{ width: '25px', height: '25px', objectFit: 'cover' }} />
-                  </div>
-                </div>
-                <p style={{ fontSize: '13px', color: '#2B2B2B' }}>{f.role}</p>
-              </div>
-            </div>
-          ))}
+          <AnimatePresence mode="wait">
+            <FreelancerCard
+              key={FREELANCERS[current].name}
+              freelancer={FREELANCERS[current]}
+              cardKey={FREELANCERS[current].name}
+            />
+          </AnimatePresence>
         </motion.div>
 
         {/* Embedded video */}

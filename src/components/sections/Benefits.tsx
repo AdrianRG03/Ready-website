@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Container } from '@/components/ui'
@@ -58,7 +57,7 @@ export function Benefits() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display font-extrabold text-white text-left"
+            className="font-display font-extrabold text-white text-center xl:text-left"
             style={{ fontSize: '30px' }}
           >
             {t('proceso.title')}

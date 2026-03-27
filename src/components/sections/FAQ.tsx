@@ -47,7 +47,7 @@ export function FAQ() {
           </motion.h2>
 
           <motion.p
-            className="pt-5 pb-10"
+            className="pt-5 pb-10 text-center xl:text-left"
             style={{ fontSize: '16px', color: '#FFFFFF' }}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -66,7 +66,7 @@ export function FAQ() {
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
                 <h5
-                  className="font-sans font-extrabold max-w-52 md:max-w-fit"
+                  className="font-sans font-extrabold"
                   style={{ fontSize: '18px', color: '#FFFFFF' }}
                 >
                   {t(feature.titleKey)}

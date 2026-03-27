@@ -34,7 +34,7 @@ export function About() {
 
           {/* ── Título ── */}
           <motion.div
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 justify-center xl:justify-start"
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
             variants={fadeUp}
@@ -70,13 +70,13 @@ export function About() {
                   custom={i + 1}
                 >
                   <h5
-                    className="font-extrabold"
+                    className="font-extrabold text-center xl:text-left"
                     style={{ fontSize: '18px', color: '#0F5C4A' }}
                   >
                     {t(item.titleKey)}
                   </h5>
                   <p
-                    className="mt-1"
+                    className="mt-1 text-center xl:text-left"
                     style={{ fontSize: '16px', color: '#2B2B2B', lineHeight: '1.5' }}
                   >
                     {t(item.descKey)}

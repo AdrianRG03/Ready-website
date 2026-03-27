@@ -57,18 +57,18 @@ export function HowItWorks() {
             <motion.div variants={fadeUp} custom={0} className="max-w-xl">
               <h2
                 id="servicios-heading"
-                className="font-display font-extrabold leading-tight"
+                className="font-display font-extrabold leading-tight text-center xl:text-left"
                 style={{ fontSize: '30px', color: '#0F5C4A' }}
               >
                 {t('servicios.title')}
               </h2>
-              <p className="mt-2 leading-relaxed" style={{ fontSize: '16px', color: '#2B2B2B' }}>
+              <p className="mt-2 leading-relaxed text-center xl:text-left" style={{ fontSize: '16px', color: '#2B2B2B' }}>
                 {t('servicios.subtitle')}
               </p>
             </motion.div>
 
             {/* CTA "Agenda una llamada" */}
-            <motion.div variants={fadeUp} custom={1} className="shrink-0">
+            <motion.div variants={fadeUp} custom={1} className="shrink-0 flex xl:block justify-center">
               <a
                 href="https://calendly.com/montse-thu/30min?month=2026-03"
                 target="_blank"

@@ -12,11 +12,11 @@ const NAV_LINKS = [
 ]
 
 const PERFIL_LINKS = [
-  { key: 'footer.linkDesarrollo', href: '#' },
-  { key: 'footer.linkData',       href: '#' },
-  { key: 'footer.linkDiseno',     href: '#' },
-  { key: 'footer.linkMarketing',  href: '#' },
-  { key: 'footer.linkIA',         href: '#' },
+  { key: 'footer.linkDesarrollo', to: '/perfiles/desarrollo/desarrollador-front-end' },
+  { key: 'footer.linkData',       to: '/perfiles/data/data-engineer' },
+  { key: 'footer.linkDiseno',     to: '/perfiles/diseno/disenador-ux' },
+  { key: 'footer.linkMarketing',  to: '/perfiles/marketing/digital-marketing-strategist' },
+  { key: 'footer.linkIA',         to: '/perfiles/ia-automatizacion/ai-product-manager' },
 ]
 
 export function Footer() {
@@ -88,14 +88,14 @@ export function Footer() {
               {t('footer.perfilesLabel')}
             </h5>
             {PERFIL_LINKS.map(l => (
-              <a
+              <Link
                 key={l.key}
-                href={l.href}
+                to={l.to}
                 className="font-sans hover:text-[#0F5C4A] transition-colors"
                 style={{ fontSize: '16px', color: '#2B2B2B' }}
               >
                 {t(l.key)}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

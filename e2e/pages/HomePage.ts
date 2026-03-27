@@ -25,7 +25,7 @@ export class HomePage {
   async goto(locale: 'es' | 'en' = 'es') {
     const path = locale === 'en' ? '/en/' : '/'
     await this.page.goto(path)
-    await this.page.waitForLoadState('networkidle')
+    await this.page.waitForLoadState('domcontentloaded')
   }
 
   async switchLanguage(to: 'es' | 'en') {

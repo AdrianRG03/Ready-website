@@ -112,16 +112,19 @@ export function Navbar() {
               <LanguageSwitcher className="ml-4" />
             </div>
 
-            {/* Mobile hamburger */}
-            <button
-              className="lg:hidden p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4]"
-              onClick={() => setIsMobileOpen(true)}
-              aria-label="Abrir menú de navegación"
-              aria-expanded={isMobileOpen}
-              aria-controls="mobile-menu"
-            >
-              <Icon name="menu" size={24} className="text-white" />
-            </button>
+            {/* Mobile: language switcher + hamburger */}
+            <div className="lg:hidden flex items-center gap-2">
+              <LanguageSwitcher />
+              <button
+                className="p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4]"
+                onClick={() => setIsMobileOpen(true)}
+                aria-label="Abrir menú de navegación"
+                aria-expanded={isMobileOpen}
+                aria-controls="mobile-menu"
+              >
+                <Icon name="menu" size={24} className="text-white" />
+              </button>
+            </div>
           </nav>
         </Container>
       </motion.header>
