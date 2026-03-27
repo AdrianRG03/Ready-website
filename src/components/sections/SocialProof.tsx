@@ -175,7 +175,7 @@ export function SocialProof() {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <a
-              href="https://wa.me/34624607445"
+              href="https://wa.me/34624607445?text=%C2%A1Hola!%20Queria%20obtener%20informaci%C3%B3n%20sobre%20los%20talentos%20de%20Ready"
               target="_blank"
               rel="noopener noreferrer"
               className="font-sans font-bold"

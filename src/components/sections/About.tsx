@@ -145,7 +145,7 @@ export function About() {
 
             {/* Escribe al WhatsApp */}
             <a
-              href="https://wa.me/34624607445"
+              href="https://wa.me/34624607445?text=%C2%A1Hola!%20Queria%20obtener%20informaci%C3%B3n%20sobre%20los%20talentos%20de%20Ready"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-semibold rounded-md"

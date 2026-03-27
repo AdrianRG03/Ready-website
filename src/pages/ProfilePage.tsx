@@ -178,7 +178,7 @@ export function ProfilePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 xl:justify-start justify-center">
             <a
-              href="https://wa.me/34624607445"
+              href="https://wa.me/34624607445?text=%C2%A1Hola!%20Queria%20obtener%20informaci%C3%B3n%20sobre%20los%20talentos%20de%20Ready"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shimmer inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0FAB4] transition-all duration-200"
@@ -264,7 +264,7 @@ export function ProfilePage() {
         {/* Botón CTA centrado */}
         <div className="flex justify-center mt-12">
           <a
-            href="https://wa.me/34624607445"
+            href="https://wa.me/34624607445?text=%C2%A1Hola!%20Queria%20obtener%20informaci%C3%B3n%20sobre%20los%20talentos%20de%20Ready"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-base transition-colors"
@@ -287,7 +287,7 @@ export function ProfilePage() {
           {t('selloReady.ctaWhatsapp')}
         </span>
         <motion.a
-          href="https://wa.me/34624607445"
+          href="https://wa.me/34624607445?text=%C2%A1Hola!%20Queria%20obtener%20informaci%C3%B3n%20sobre%20los%20talentos%20de%20Ready"
           target="_blank"
           rel="noopener noreferrer"
           aria-label={t('selloReady.ctaWhatsapp')}

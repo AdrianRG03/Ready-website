@@ -83,7 +83,7 @@ export function Navbar() {
             <div className="hidden lg:flex items-center gap-1">
               {/* Quiero Cotizar */}
               <a
-                href="https://wa.me/34624607445"
+                href="https://wa.me/34624607445?text=%C2%A1Hola!%20Queria%20obtener%20informaci%C3%B3n%20sobre%20los%20talentos%20de%20Ready"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => analytics.trackCTAClick('navbar-cta-hire')}
